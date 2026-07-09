@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phạm Thu Hà - Digital Portfolio</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <!-- Google Fonts hỗ trợ tiếng Việt tuyệt đối không lỗi dấu -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Tailwind CSS CDN -->
@@ -16,20 +16,20 @@
                 extend: {
                     colors: {
                         pastelPink: {
-                            50: '#fffbfb',
+                            50: '#fffcfc',
                             100: '#ffeef2',
-                            200: '#ffd0dc',
+                            200: '#ffccd5',
                             300: '#ffb3c1',
                             400: '#ff85a1',
-                            500: '#ff5381',
+                            500: '#ff477e',
                         },
-                        darkRose: '#2d161a',
+                        darkRose: '#3d1c21',
                         dreamWhite: '#ffffff',
                     },
                     fontFamily: {
                         sans: ['"Plus Jakarta Sans"', 'sans-serif'],
                         serif: ['"Playfair Display"', 'serif'],
-                        cursive: ['"Dancing Script"', 'cursive'],
+                        cursive: ['"Caveat"', 'cursive'],
                     }
                 }
             }
@@ -44,14 +44,26 @@
             background: #fff0f3;
         }
         ::-webkit-scrollbar-thumb {
-            background: #ffd0dc;
+            background: #ffccd5;
             border-radius: 10px;
         }
         ::-webkit-scrollbar-thumb:hover {
             background: #ff85a1;
         }
 
-        /* Ambient Dynamic Background CSS blobs */
+        /* Nền dải màu chuyển động liên tục (Dynamic Gradient Background) */
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .animated-bg {
+            background: linear-gradient(-45deg, #ffeef2, #fffbfb, #ffd9e2, #ffffff);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+
+        /* Màng chất lỏng chuyển động xoay quanh trang */
         .ambient-container {
             position: absolute;
             width: 100%;
@@ -66,90 +78,119 @@
         .blob {
             position: absolute;
             border-radius: 50%;
-            filter: blur(120px);
+            filter: blur(80px); /* Giảm độ blur để màu sắc hiện rõ nét hơn */
             mix-blend-mode: multiply;
-            animation: moveBlobs 20s infinite alternate ease-in-out;
-            opacity: 0.6;
+            animation: rotateBlobs 18s infinite alternate ease-in-out;
+            opacity: 0.75; /* Tăng độ hiển thị màu nền */
         }
 
         .blob-pink-1 {
-            width: 600px;
-            height: 600px;
-            background: rgba(255, 204, 213, 0.4);
-            top: -100px;
-            right: -100px;
-            animation-duration: 22s;
+            width: 550px;
+            height: 550px;
+            background: rgba(255, 182, 193, 0.5);
+            top: -50px;
+            right: -50px;
+            animation-duration: 15s;
         }
 
         .blob-pink-2 {
-            width: 500px;
-            height: 500px;
-            background: rgba(255, 182, 193, 0.35);
-            bottom: -50px;
+            width: 480px;
+            height: 480px;
+            background: rgba(255, 145, 175, 0.35);
+            bottom: 5%;
             left: -100px;
-            animation-duration: 26s;
-            animation-delay: -5s;
+            animation-duration: 20s;
+            animation-delay: -3s;
         }
 
         .blob-lavender {
-            width: 450px;
-            height: 450px;
-            background: rgba(240, 210, 235, 0.3);
-            top: 40%;
-            left: 30%;
-            animation-duration: 30s;
-            animation-delay: -10s;
+            width: 400px;
+            height: 400px;
+            background: rgba(240, 180, 230, 0.4);
+            top: 35%;
+            left: 25%;
+            animation-duration: 25s;
         }
 
-        @keyframes moveBlobs {
+        @keyframes rotateBlobs {
             0% { transform: translate(0px, 0px) scale(1) rotate(0deg); }
-            33% { transform: translate(50px, -70px) scale(1.08) rotate(120deg); }
-            66% { transform: translate(-30px, 40px) scale(0.92) rotate(240deg); }
-            100% { transform: translate(0px, 0px) scale(1) rotate(360deg); }
+            50% { transform: translate(40px, -60px) scale(1.08) rotate(180deg); }
+            100% { transform: translate(-20px, 20px) scale(0.95) rotate(360deg); }
         }
 
-        /* Glassmorphism utility */
+        /* Glassmorphism Styles */
         .glass-panel {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.6);
         }
 
         .glass-card {
-            background: rgba(255, 255, 255, 0.6);
+            background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.5);
             transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
-        /* Star Sparkle animations */
-        @keyframes twinkle {
-            0%, 100% { opacity: 0.3; transform: scale(0.85); }
-            50% { opacity: 1; transform: scale(1.15); }
-        }
-        .animate-twinkle {
-            animation: twinkle 4s infinite ease-in-out;
+        /* Dynamic Floating Petal/Bubble style */
+        .floating-bubble {
+            position: absolute;
+            background: rgba(255, 182, 193, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: -5;
+            animation: riseUp 12s linear infinite;
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-8px) rotate(1deg); }
+        @keyframes riseUp {
+            0% {
+                transform: translateY(110vh) translateX(0) scale(0.5);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.7;
+            }
+            90% {
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(-10vh) translateX(80px) scale(1.2);
+                opacity: 0;
+            }
         }
-        .animate-float {
-            animation: float 6s infinite ease-in-out;
+
+        /* Soft Floating/Bounce Animation for Elements */
+        @keyframes subtleFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-8px) rotate(0.5deg); }
+        }
+        .animate-subtle {
+            animation: subtleFloat 5s infinite ease-in-out;
+        }
+
+        @keyframes subtleFloatReverse {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(8px) rotate(-0.5deg); }
+        }
+        .animate-subtle-reverse {
+            animation: subtleFloatReverse 6s infinite ease-in-out;
         }
     </style>
 </head>
-<body class="bg-[#faf5f6] text-darkRose font-sans min-h-screen relative overflow-x-hidden">
+<body class="animated-bg text-darkRose font-sans min-h-screen relative overflow-x-hidden">
 
-    <!-- Ambient Shifting Liquid Backgrounds -->
+    <!-- Ambient Dynamic Colored Blobs (Rõ nét hơn) -->
     <div class="ambient-container">
         <div class="blob blob-pink-1"></div>
         <div class="blob blob-pink-2"></div>
         <div class="blob blob-lavender"></div>
     </div>
+
+    <!-- Container tự động thả bóng nước/bong bóng pastel bay lên liên tục -->
+    <div id="bubble-container" class="absolute inset-0 pointer-events-none z-0 overflow-hidden"></div>
 
     <!-- Navigation Header -->
     <header class="sticky top-0 z-50 px-6 py-4 transition-all duration-300">
@@ -166,7 +207,7 @@
             </a>
 
             <!-- Menu Navigation -->
-            <nav class="hidden md:flex items-center gap-8 font-medium text-xs tracking-wider uppercase">
+            <nav class="hidden md:flex items-center gap-8 font-semibold text-xs tracking-wider uppercase">
                 <a href="#about" class="hover:text-pastelPink-500 transition-colors">Giới thiệu</a>
                 <a href="#projects" class="hover:text-pastelPink-500 transition-colors">Dự án & Bài tập</a>
                 <a href="#summary" class="hover:text-pastelPink-500 transition-colors">Tổng kết môn học</a>
@@ -174,7 +215,7 @@
 
             <!-- Navigation Action Button -->
             <div>
-                <a href="https://drive.google.com/drive/folders/1b2Karue7fhC9kq6VFrNAFwDnViSFB9Zx?usp=drive_link" target="_blank" class="px-4 py-2 bg-pastelPink-500 hover:bg-pastelPink-600 text-white rounded-xl text-xs font-semibold tracking-wide flex items-center gap-2 transition-all duration-300 shadow-sm">
+                <a href="https://drive.google.com/drive/folders/1b2Karue7fhC9kq6VFrNAFwDnViSFB9Zx?usp=drive_link" target="_blank" class="px-4 py-2.5 bg-pastelPink-500 hover:bg-pastelPink-600 text-white rounded-xl text-xs font-bold tracking-wide flex items-center gap-2 transition-all duration-300 shadow-md">
                     <i class="fa-brands fa-google-drive"></i>
                     <span>Xem bài tập trên GG drive</span>
                 </a>
@@ -182,85 +223,88 @@
         </div>
     </header>
 
-    <!-- Hero Section (Bố cục chuẩn mẫu, tên phóng đại, ảnh lấp đầy) -->
-    <section class="max-w-7xl mx-auto px-6 py-12 md:py-20 grid lg:grid-cols-12 gap-12 items-center min-h-[80vh]">
+    <!-- Hero Section (Tỉ lệ chuẩn, khắc phục hoàn toàn lỗi Font chữ tràn hàng) -->
+    <section class="max-w-7xl mx-auto px-6 py-8 md:py-16 grid lg:grid-cols-12 gap-12 items-center min-h-[80vh] relative z-10">
         
-        <!-- Left Side Column (Text, Badges, Features) -->
-        <div class="lg:col-span-7 space-y-8">
+        <!-- Left Side: Text and Badges (Bố cục cân bằng, thoáng đãng) -->
+        <div class="lg:col-span-7 space-y-6">
             <!-- Course Pill Badge -->
-            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 bg-white/80 border border-pastelPink-100 rounded-full text-xs font-medium text-pastelPink-500 shadow-sm">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 bg-white/90 border border-pastelPink-100 rounded-full text-xs font-semibold text-pastelPink-500 shadow-sm">
                 <i class="fa-solid fa-sparkles text-[10px]"></i>
                 <span>Nhập môn Công nghệ số & Ứng dụng AI</span>
             </div>
 
-            <!-- Big Greetings and Handwriting Name (Xử lý to hơn, nét bút tiếng Việt mượt mà) -->
+            <!-- Big Greetings and Handwriting Name (Fix triệt để lỗi xuống dòng & lỗi dấu) -->
             <div class="space-y-1">
-                <h1 class="font-serif text-5xl md:text-6xl tracking-tight text-darkRose leading-tight">
+                <h1 class="font-serif text-4xl md:text-5xl tracking-tight text-darkRose/90 font-medium">
                     Hello! Mình là
                 </h1>
-                <div class="font-cursive text-7xl md:text-8xl text-pastelPink-500 leading-none py-2 select-none drop-shadow-[0_2px_15px_rgba(255,133,161,0.25)] select-none">
-                    Phạm Thu Hà
+                <div class="py-2 inline-block">
+                    <!-- whitespace-nowrap bảo vệ chữ không bị ngắt quãng, padding lớn tránh cắt mất dấu móc -->
+                    <span class="font-cursive text-7xl md:text-8xl text-pastelPink-500 tracking-wide select-none drop-shadow-[0_4px_12px_rgba(255,71,126,0.2)] md:whitespace-nowrap pb-4 px-2 block leading-none">
+                        Phạm Thu Hà
+                    </span>
                 </div>
             </div>
 
             <!-- Major Details -->
             <p class="text-sm md:text-base text-gray-600 leading-relaxed max-w-xl">
-                Sinh viên ngành <span class="font-semibold text-darkRose">Ngôn ngữ và Văn hoá Anh</span> tại <span class="font-semibold text-darkRose">Đại học Ngoại ngữ - ĐHQGHN (ULIS)</span>. Mã số sinh viên: <span class="font-semibold text-pastelPink-500">25040623</span>.
+                Sinh viên ngành <span class="font-bold text-darkRose">Ngôn ngữ và Văn hoá Anh</span> tại <span class="font-bold text-darkRose">Đại học Ngoại ngữ - ĐHQGHN (ULIS)</span>. Mã số sinh viên: <span class="font-bold text-pastelPink-500 bg-pastelPink-100/60 px-2.5 py-0.5 rounded-md">25040623</span>.
             </p>
 
-            <!-- Features Grid (2 items bottom left as in reference images) -->
+            <!-- Features Grid -->
             <div class="grid sm:grid-cols-2 gap-4 pt-4">
                 <!-- Feature 1 -->
-                <div class="glass-card p-5 rounded-2xl flex gap-3.5 border border-white/60">
+                <div class="glass-card p-5 rounded-2xl flex gap-3.5 border border-white/80">
                     <div class="w-9 h-9 rounded-xl bg-pastelPink-100 flex items-center justify-center text-pastelPink-500 shrink-0">
                         <i class="fa-solid fa-chart-line text-sm"></i>
                     </div>
                     <div>
                         <h4 class="font-bold text-darkRose text-sm mb-1">Thể hiện năng lực</h4>
-                        <p class="text-xs text-gray-500 leading-relaxed">Hệ thống hoá các kỹ năng số và tư duy ứng dụng AI đã tích luỹ qua khóa học.</p>
+                        <p class="text-[11px] text-gray-500 leading-relaxed">Hệ thống hoá các kỹ năng số và tư duy ứng dụng AI đã tích luỹ qua khóa học.</p>
                     </div>
                 </div>
 
                 <!-- Feature 2 -->
-                <div class="glass-card p-5 rounded-2xl flex gap-3.5 border border-white/60">
+                <div class="glass-card p-5 rounded-2xl flex gap-3.5 border border-white/80">
                     <div class="w-9 h-9 rounded-xl bg-pastelPink-100 flex items-center justify-center text-pastelPink-500 shrink-0">
                         <i class="fa-solid fa-share-nodes text-sm"></i>
                     </div>
                     <div>
                         <h4 class="font-bold text-darkRose text-sm mb-1">Lưu trữ & Chia sẻ</h4>
-                        <p class="text-xs text-gray-500 leading-relaxed">Không gian số trực quan giúp dễ dàng truy cập, chia sẻ sản phẩm cá nhân bền vững.</p>
+                        <p class="text-[11px] text-gray-500 leading-relaxed">Không gian số trực quan giúp dễ dàng truy cập, chia sẻ sản phẩm cá nhân bền vững.</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Right Side Column (Ảnh fill full khung, bo tròn sâu) -->
+        <!-- Right Side: Full-bleed standing photo frame (Bo tròn sâu nghệ thuật, không có chữ thừa) -->
         <div class="lg:col-span-5 flex justify-center lg:justify-end relative">
-            <!-- Sparkles -->
-            <div class="absolute -top-6 -left-6 text-pastelPink-400 text-2xl animate-twinkle">
+            <!-- Sparkle decorations -->
+            <div class="absolute -top-6 -left-6 text-pastelPink-400 text-2xl animate-pulse">
                 <i class="fa-solid fa-sparkles"></i>
             </div>
-            <div class="absolute -bottom-6 right-10 text-pastelPink-300 text-3xl animate-twinkle" style="animation-delay: 1.5s;">
+            <div class="absolute -bottom-6 right-10 text-pastelPink-300 text-3xl animate-pulse" style="animation-delay: 2s;">
                 <i class="fa-solid fa-star"></i>
             </div>
 
-            <!-- Full-bleed photo frame -->
-            <div class="w-80 h-[440px] rounded-[36px] overflow-hidden shadow-2xl border-4 border-white relative group animate-float bg-pastelPink-50">
+            <!-- Khung ảnh đứng tối giản không chữ chú thích (Tỉ lệ vàng 3:4) -->
+            <div class="w-80 h-[430px] rounded-[38px] overflow-hidden shadow-[0_25px_50px_-12px_rgba(255,133,161,0.25)] border-[5px] border-white relative group animate-subtle bg-pastelPink-50">
                 <img src="Hình 1.jpg" alt="Phạm Thu Hà" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=600';">
                 <div class="absolute inset-0 bg-gradient-to-t from-pastelPink-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
         </div>
     </section>
 
-    <!-- Google Drive Banner before homework grid -->
+    <!-- Google Drive Banner -->
     <section class="max-w-7xl mx-auto px-6 py-6" id="about">
-        <div class="glass-card p-6 rounded-3xl text-center space-y-4 border border-white/70">
-            <h3 class="font-serif font-bold text-lg text-darkRose">Kho lưu trữ minh chứng và tài liệu báo cáo học tập</h3>
+        <div class="glass-card p-8 rounded-3xl text-center space-y-4 border border-white/80">
+            <h3 class="font-serif font-bold text-xl text-darkRose">Kho lưu trữ minh chứng và tài liệu báo cáo học tập</h3>
             <p class="text-xs text-gray-500 max-w-lg mx-auto">
                 Cam kết liêm chính và minh bạch học thuật bằng cách số hóa toàn bộ tài liệu nghiên cứu gốc, hình ảnh kết xuất và nhật trình câu lệnh.
             </p>
             <div class="inline-block">
-                <a href="https://drive.google.com/drive/folders/1b2Karue7fhC9kq6VFrNAFwDnViSFB9Zx?usp=drive_link" target="_blank" class="px-6 py-3 bg-gradient-to-r from-pastelPink-500 to-pastelPink-400 text-white font-semibold text-xs tracking-wider rounded-full shadow-md hover:shadow-pink-200 hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2">
+                <a href="https://drive.google.com/drive/folders/1b2Karue7fhC9kq6VFrNAFwDnViSFB9Zx?usp=drive_link" target="_blank" class="px-6 py-3 bg-gradient-to-r from-pastelPink-500 to-pastelPink-400 text-white font-bold text-xs tracking-wider rounded-full shadow-md hover:shadow-pink-200 hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2">
                     <i class="fa-brands fa-google-drive"></i>
                     <span>TẬP TIN BÁO CÁO CÁ NHÂN TRÊN GOOGLE DRIVE</span>
                 </a>
@@ -269,7 +313,7 @@
     </section>
 
     <!-- Interactive Projects Dashboard Section -->
-    <section id="projects" class="py-20 px-6">
+    <section id="projects" class="py-20 px-6 relative z-10">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16 space-y-2">
                 <span class="text-xs uppercase tracking-widest text-pastelPink-500 font-bold bg-pastelPink-100 px-3 py-1 rounded-full">Sản phẩm thực hành</span>
@@ -349,7 +393,7 @@
     </section>
 
     <!-- Experience Reflections -->
-    <section id="summary" class="py-20 px-6 bg-white/30 backdrop-blur-md">
+    <section id="summary" class="py-20 px-6 bg-white/30 backdrop-blur-md relative z-10">
         <div class="max-w-4xl mx-auto space-y-12">
             <div class="text-center space-y-2">
                 <span class="text-xs uppercase tracking-widest text-pastelPink-500 font-bold bg-pastelPink-100 px-3 py-1 rounded-full">Tự soi chiếu hành trình</span>
@@ -362,10 +406,10 @@
                 <div class="glass-card p-8 rounded-3xl space-y-3 border border-white/60">
                     <h3 class="font-serif font-bold text-base text-darkRose flex items-center gap-2.5">
                         <span class="text-pastelPink-500 text-lg"><i class="fa-solid fa-lightbulb"></i></span>
-                        <span>Sự dịch chuyển từ "Người tiêu thụ" sang "Nhà thiết kế giải pháp"</span>
+                        <span>Dịch chuyển từ "Người tiêu thụ" sang "Nhà thiết kế giải pháp"</span>
                     </h3>
                     <p>
-                        Trước đây, tôi thường xem các công cụ số độc lập. Trải qua học phần, tôi học được cách tự xây dựng không gian lưu trữ số ngăn nắp, rèn luyện tư duy tìm kiếm nguồn học thuật chính thống chuẩn CRAAP và thiết kế câu lệnh có hệ thống để giao tiếp chuẩn sư phạm với AI. Tôi nhận ra, năng lực sử dụng công cụ có tổ chức chính là chìa khóa mở rộng giới hạn tư duy tự học.
+                        Trước đây, tôi thường nhìn nhận các công cụ số độc lập. Trải qua học phần, tôi học được cách tự xây dựng không gian lưu trữ số ngăn nắp, rèn luyện tư duy tìm kiếm nguồn học thuật chính thống chuẩn CRAAP và thiết kế câu lệnh có hệ thống để giao tiếp chuẩn sư phạm với AI. Tôi nhận ra, năng lực sử dụng công cụ có tổ chức chính là chìa khóa mở rộng giới hạn tư duy tự học.
                     </p>
                 </div>
 
@@ -399,7 +443,52 @@
 
     <!-- Interactive Script Logic -->
     <script>
-        // Database of 6 Tasks (Bám sát tài liệu cá nhân)
+        // JS Sinh hạt bong bóng pastel bay lên tự động liên tục (Làm nền động rõ nét hơn)
+        function createBubbles() {
+            const body = document.body;
+            const bubbleCount = 20; // Số lượng bóng nổi song song
+            for (let i = 0; i < starCount; i++) {
+                // Tạo ngôi sao lấp lánh (sparkles)
+            }
+            
+            // Hàm sinh hạt bong bóng pastel trôi lên phía trên
+            setInterval(() => {
+                if (document.querySelectorAll('.floating-bubble').length < 20) {
+                    const bubble = document.createElement('div');
+                    bubble.className = 'floating-bubble';
+                    const size = Math.random() * 20 + 10; // Cỡ hạt từ 10px đến 30px
+                    bubble.style.width = `${size}px`;
+                    starField.appendChild(bubble);
+                }
+            }, 2000);
+        }
+
+        // Tạo 15 bong bóng nổi mịn màng ngay khi trang tải xong
+        const container = document.body;
+        for (let i = 0; i < 18; i++) {
+            createBubble();
+        }
+
+        function createBubble() {
+            const bubble = document.createElement('div');
+            bubble.className = 'floating-bubble';
+            const size = Math.random() * 25 + 10;
+            bubble.style.width = `${size}px`;
+            bubble.style.height = `${size}px`;
+            bubble.style.left = `${Math.random() * 100}vw`;
+            bubble.style.bottom = `-20px`;
+            bubble.style.animationDuration = `${Math.random() * 8 + 8}s`; // thời gian bay 8-16s
+            bubble.style.animationDelay = `${Math.random() * 5}s`;
+            
+            // Xóa phần tử sau khi bay xong để giải phóng bộ nhớ
+            bubble.addEventListener('animationend', () => {
+                bubble.remove();
+                createBubble();
+            });
+            container.appendChild(bubble);
+        }
+
+        // Database of 6 Tasks (Bám sát tài liệu thực tế của bạn)
         const taskDatabase = {
             1: {
                 title: "Hệ thống hóa Không gian số: Quản lý Tệp tin khoa học",
@@ -421,17 +510,17 @@
                 title: "Kỹ nghệ Viết Prompt: Làm chủ Ngữ cảnh AI",
                 meta: "Bài thực hành 3 // Effective Prompting Simulation Widget",
                 icon: "fa-wand-magic-sparkles",
-                objective: "Làm chủ phương pháp tương tác chuẩn xác với các mô hình ngôn ngữ lớn (LLM), ứng dụng công nghệ làm trợ lý định hướng tư duy học tập.",
+                objective: "Làm chủ phương pháp tương tác chuẩn xác với các mô hình ngôn ngữ lớn (LLM), ứng dụng AI như trợ lý định hướng tư duy học tập.",
                 process: "Thử nghiệm 3 tác vụ học tập phổ biến (Tóm tắt Truyện Kiều, Giải thích khái niệm AI, Thiết kế bộ câu hỏi Tiếng Anh THPT) qua 3 thế hệ prompt: Cơ bản (Basic), Cải tiến (Improved - bổ sung ranh giới độ dài và định hướng nội dung), và Nâng cao (Advanced - phối hợp các kỹ thuật Role Prompting, Chain-of-Thought, và Structured Prompting).",
                 result: "Phần mềm mô phỏng (bấm thử bên dưới) chứng minh tầm quan trọng của prompt có cấu trúc trong định hình khả năng phân tích hệ thống của AI.",
-                interactive: true // Custom Interactive element loaded for Task 3
+                interactive: true 
             },
             4: {
                 title: "Công cụ Hợp tác Nhóm trực tuyến Dự án 'GenAI'",
                 meta: "Bài thực hành 4 // Digital Group Collaboration Workspace",
                 icon: "fa-users-gear",
                 objective: "Phối hợp, điều phối và thiết lập dòng thời gian làm việc nhóm về Generative AI đồng bộ trong 1 tuần.",
-                process: "Đóng vai trò Quản lý nội dung và Định hướng chiến dịch. Tích hợp chặt chẽ 4 công cụ trực tuyến: Notion (giám sát tiến độ), Google Meet (họp trực tuyến thống nhất ý tưởng), Google Docs (soạn thảo trực tuyến và chỉnh sửa phản hồi chéo qua hệ thống comment thời gian thực), và Google Drive (kho lưu trữ đồng bộ đặt tên tệp tiêu chuẩn `TenNoiDung_NgayThang`).",
+                process: "Đóng vai trò Quản lý nội dung và Định hướng chiến dịch. Tích hợp chặt chẽ 4 công cụ trực tuyến: Notion (giám sát tiến độ), Google Meet (họp trực tuyến trao đổi ý tưởng), Google Docs (soạn thảo trực tuyến và chỉnh sửa phản hồi chéo qua hệ thống comment thời gian thực), và Google Drive (kho lưu trữ đồng bộ đặt tên tệp tiêu chuẩn `TenNoiDung_NgayThang`).",
                 result: "Quy trình hợp tác số trơn tru, vượt qua rào cản phân chia thời gian họp trực tiếp và quản lý phiên bản tài liệu nhóm."
             },
             5: {
@@ -439,7 +528,7 @@
                 meta: "Bài thực hành 5 // AI Generative Tools Integration & UX",
                 icon: "fa-palette",
                 objective: "Thiết kế sản phẩm truyền thông dạng Infographic giải mã cơ chế hành vi 'Áp lực đồng trang lứa' (Peer Pressure) của Gen Z trên không gian mạng.",
-                process: "Đồng kiến tạo cùng AI: Google Gemini xây dựng nội dung scannability tối ưu đọc lướt, Dreamina AI vẽ tranh nghệ thuật ẩn dụ làm Key Visual, Canva Magic Studio gợi ý layout lưới. Kết hợp sự đóng góp thẩm mỹ thủ công của con người (Photoshop tinh chỉnh làm sạch asset thô, Canva thiết lập bảng màu tâm lý học Xanh dương cổ điển - Kem xám - Trắng và phân bổ khoảng thở thị giác).",
+                process: "Áp dụng quy trình đồng kiến tạo với AI (45% AI hỗ trợ: Google Gemini xây dựng khung nội dung scannability, Dreamina AI vẽ tranh nghệ thuật ẩn dụ làm Key Visual, Canva Magic Studio gợi ý layout lưới); Kết hợp 55% sự đóng góp thẩm mỹ thủ công của con người (Photoshop tinh chỉnh làm sạch asset thô, Canva thiết lập bảng màu tâm lý học Xanh dương cổ điển - Kem xám - Trắng và phân bổ khoảng thở thị giác).",
                 result: "Sản phẩm Infographic thiết kế chuyên nghiệp, đạt tiêu chuẩn tối ưu hóa trải nghiệm đọc lướt nhanh của người xem trên di động."
             },
             6: {
@@ -447,10 +536,12 @@
                 meta: "Bài thực hành 6 // VNU Academic Integrity & AI Statement",
                 icon: "fa-shield-halved",
                 objective: "Phân tích quy chế đạo đức học thuật của ĐHQGHN (VNU) và thiết lập ranh giới trách nhiệm sử dụng AI cá nhân.",
-                process: "Nghiên cứu chính sách sử dụng AI của VNU, so sánh đối chiếu với các trường đại học RMIT, Bách Khoa. Phân tích tính phi sở hữu của sản phẩm sinh ra từ LLM. Thiết lập bộ 5 nguyên tắc cá nhân: Quyền làm chủ tư duy, Nói không với sao chép trực tiếp, Hoài nghi khoa học & kiểm chứng dữ liệu, Minh bạch trích dẫn (AI Statement), và Bảo mật dữ liệu nội bộ.",
+                process: "Nghiên cứu chính sách sử dụng AI của VNU, so sánh đối chiếu với các trường đại học RMIT, Bách Khoa. Phân tích tính chất phi sở hữu của sản phẩm sinh ra từ LLM. Thiết lập bộ 5 nguyên tắc cá nhân: Quyền làm chủ tư duy, Nói không với sao chép trực tiếp, Hoài nghi khoa học & kiểm chứng dữ liệu, Minh bạch trích dẫn (AI Statement), và Bảo mật dữ liệu nội bộ.",
                 result: "Kiến tạo bản tuyên ngôn AI cá nhân chuẩn mực giúp bảo vệ năng lực nghiên cứu tự thân trung thực của sinh viên ULIS."
             }
         };
+
+        const panel = document.getElementById('task-details-panel');
 
         // Render chosen homework to Detail Panel
         function switchTask(id) {
@@ -461,16 +552,15 @@
             const buttons = document.querySelectorAll('#task-selector-list button');
             buttons.forEach((btn, idx) => {
                 if (idx + 1 === id) {
-                    btn.className = "w-full text-left p-4 rounded-2xl border transition-all duration-300 flex items-center gap-3.5 bg-white text-darkRose border-pastelPink-100 shadow-sm";
+                    btn.className = "w-full text-left p-4 rounded-2xl border transition-all duration-300 flex items-center gap-3.5 bg-white text-darkRose border-pastelPink-200 shadow-md";
                     btn.querySelector('span').className = "w-8 h-8 rounded-xl bg-pastelPink-100 flex items-center justify-center text-pastelPink-500 text-xs font-bold font-serif shrink-0";
                 } else {
-                    btn.className = "w-full text-left p-4 rounded-2xl border transition-all duration-300 flex items-center gap-3.5 bg-white/50 text-gray-500 border-transparent hover:bg-white/80";
+                    btn.className = "w-full text-left p-4 rounded-2xl border transition-all duration-300 flex items-center gap-3.5 bg-white/40 text-gray-500 border-transparent hover:bg-white/80";
                     btn.querySelector('span').className = "w-8 h-8 rounded-xl bg-pink-50 flex items-center justify-center text-gray-400 text-xs font-bold font-serif shrink-0";
                 }
             });
 
             // Smooth content fade out and reload
-            const panel = document.getElementById('task-details-panel');
             panel.style.opacity = '0';
             panel.style.transform = 'translateY(10px)';
 
@@ -485,11 +575,11 @@
                                 <i class="fa-solid fa-gamepad text-pastelPink-500"></i> Trình Mô Phỏng Cấp Độ Prompt (Click trải nghiệm)
                             </h4>
                             <div class="flex gap-2.5">
-                                <button onclick="simulatePrompt('basic')" class="px-3 py-1.5 rounded-full text-xs font-semibold bg-gray-100 hover:bg-gray-200 text-gray-600 transition-all">Basic</button>
-                                <button onclick="simulatePrompt('improved')" class="px-3 py-1.5 rounded-full text-xs font-semibold bg-pastelPink-100 hover:bg-pastelPink-200 text-pastelPink-500 transition-all">Improved</button>
-                                <button onclick="simulatePrompt('advanced')" class="px-3 py-1.5 rounded-full text-xs font-semibold bg-pastelPink-500 hover:bg-pastelPink-600 text-white transition-all">Advanced</button>
+                                <button onclick="simulatePrompt('basic')" class="px-3.5 py-1.5 rounded-full text-xs font-bold bg-gray-100 hover:bg-gray-200 text-gray-600 transition-all">Basic</button>
+                                <button onclick="simulatePrompt('improved')" class="px-3.5 py-1.5 rounded-full text-xs font-bold bg-pastelPink-100 hover:bg-pastelPink-200 text-pastelPink-500 transition-all">Improved</button>
+                                <button onclick="simulatePrompt('advanced')" class="px-3.5 py-1.5 rounded-full text-xs font-bold bg-pastelPink-500 hover:bg-pastelPink-600 text-white transition-all">Advanced</button>
                             </div>
-                            <div class="p-3.5 bg-white/80 rounded-xl border border-pink-100/30 text-xs min-h-[100px] flex items-center justify-center text-gray-500" id="prompt-output-box">
+                            <div class="p-4 bg-white rounded-xl border border-pink-100/30 text-xs min-h-[120px] flex items-center justify-center text-gray-500 shadow-inner" id="prompt-output-box">
                                 Hãy nhấp chọn cấp độ câu lệnh phía trên để xem sự khác biệt trong tư duy và phản hồi của AI.
                             </div>
                         </div>
@@ -538,7 +628,7 @@
                     <!-- Internal drive button link -->
                     <div class="flex justify-between items-center pt-4 border-t border-pastelPink-100/30 text-[10px] text-gray-400">
                         <span>Bản quyền dữ liệu © Phạm Thu Hà</span>
-                        <a href="https://drive.google.com/drive/folders/1b2Karue7fhC9kq6VFrNAFwDnViSFB9Zx?usp=drive_link" target="_blank" class="px-3.5 py-1.5 bg-pastelPink-100 hover:bg-pastelPink-200 text-pastelPink-500 font-bold rounded-lg transition-all flex items-center gap-1">
+                        <a href="https://drive.google.com/drive/folders/1b2Karue7fhC9kq6VFrNAFwDnViSFB9Zx?usp=drive_link" target="_blank" class="px-3.5 py-1.5 bg-pastelPink-100 hover:bg-pastelPink-200 text-pastelPink-500 font-bold rounded-lg transition-all flex items-center gap-1 shadow-sm">
                             <i class="fa-brands fa-google-drive"></i>
                             <span>Xem tài liệu gốc</span>
                         </a>
@@ -558,31 +648,31 @@
             setTimeout(() => {
                 if (level === 'basic') {
                     box.innerHTML = `
-                        <div class="space-y-2 w-full">
+                        <div class="space-y-2 w-full text-left">
                             <span class="text-[9px] uppercase tracking-wider text-gray-400 font-bold">AI Output (Basic Prompt: "Hãy tóm tắt Truyện Kiều")</span>
-                            <p class="text-gray-600">"Truyện Kiều của Nguyễn Du kể về cuộc đời gian truân của Thúy Kiều, một cô gái tài sắc vẹn toàn phải bán mình chuộc cha. Nàng trải qua 15 năm lưu lạc từ lầu xanh đến phủ quan rồi cuối cùng đoàn tụ gia đình."</p>
-                            <span class="text-[9px] text-red-400 block font-semibold"><i class="fa-solid fa-circle-exclamation"></i> Nhận xét: Nội dung ngắn, liệt kê tuyến tính, thiếu chiều sâu phân tích văn học.</span>
+                            <p class="text-gray-600 leading-relaxed">"Truyện Kiều của Nguyễn Du kể về cuộc đời gian truân của Thúy Kiều, một cô gái tài sắc vẹn toàn phải bán mình chuộc cha. Nàng trải qua 15 năm lưu lạc từ lầu xanh đến phủ quan rồi cuối cùng đoàn tụ gia đình."</p>
+                            <span class="text-[10px] text-red-500 block font-semibold"><i class="fa-solid fa-circle-exclamation"></i> Nhận xét: Nội dung ngắn, liệt kê tuyến tính, thiếu chiều sâu phân tích văn học.</span>
                         </div>
                     `;
                 } else if (level === 'improved') {
                     box.innerHTML = `
-                        <div class="space-y-2 w-full">
+                        <div class="space-y-2 w-full text-left">
                             <span class="text-[9px] uppercase tracking-wider text-pastelPink-500 font-bold">AI Output (Improved Prompt: "...trong 200 từ, tập trung làm rõ bi kịch và phẩm chất")</span>
-                            <p class="text-gray-600">"Trong khoảng 200 từ, Truyện Kiều phác họa bức tranh bi kịch của người phụ nữ tài hoa Thúy Kiều. Hành động bán mình chuộc cha của Thúy Kiều không chỉ là biến cố cốt truyện, mà là hiện thân của lòng hiếu thảo và đức hy sinh. Cuộc đời chìm nổi 15 năm là minh chứng đanh thép cho số phận bất hạnh của phụ nữ phong kiến bị vùi dập nhân phẩm."</p>
-                            <span class="text-[9px] text-amber-500 block font-semibold"><i class="fa-solid fa-circle-info"></i> Nhận xét: Đã cô đọng, định vị đúng trọng tâm bi kịch và phẩm chất của nhân vật.</span>
+                            <p class="text-gray-600 leading-relaxed">"Trong khoảng 200 từ, Truyện Kiều phác họa bức tranh bi kịch của người phụ nữ tài hoa Thúy Kiều. Hành động bán mình chuộc cha của Thúy Kiều không chỉ là biến cố cốt truyện, mà là hiện thân của lòng hiếu thảo và đức hy sinh. Cuộc đời chìm nổi 15 năm là minh chứng đanh thép cho số phận bất hạnh của phụ nữ phong kiến bị vùi dập nhân phẩm."</p>
+                            <span class="text-[10px] text-amber-500 block font-semibold"><i class="fa-solid fa-circle-info"></i> Nhận xét: Đã cô đọng, định vị đúng trọng tâm bi kịch và phẩm chất của nhân vật.</span>
                         </div>
                     `;
                 } else if (level === 'advanced') {
                     box.innerHTML = `
-                        <div class="space-y-2 w-full">
+                        <div class="space-y-3 w-full text-left">
                             <span class="text-[9px] uppercase tracking-wider text-green-500 font-bold">AI Output (Advanced Prompt: "Bạn là giáo viên hướng dẫn ôn thi THPT...")</span>
-                            <div class="space-y-1.5 text-gray-600">
+                            <div class="space-y-1.5 text-gray-600 leading-relaxed">
                                 <p class="font-bold text-darkRose">Chào em, dưới góc độ ôn thi THPT Quốc Gia, thầy/cô tóm tắt và phân tích Thúy Kiều theo các tầng nhận thức sau:</p>
                                 <p><strong>1. Giới thiệu:</strong> Thúy Kiều là hình tượng tiêu biểu đại diện cho vẻ đẹp 'tài sắc bạc mệnh' trong xã hội phong kiến cũ.</p>
                                 <p><strong>2. Bi kịch:</strong> Bán mình chuộc cha (bi kịch Gia đình & Chữ hiếu) mở đầu chuỗi đau khổ (bi kịch Nhân phẩm & Tự do).</p>
                                 <p><strong>3. Phẩm chất:</strong> Lòng hiếu thảo tuyệt đối đối với cha mẹ và đức hy sinh hy sinh tình yêu lứa đôi với Kim Trọng.</p>
                             </div>
-                            <span class="text-[9px] text-green-500 block font-semibold"><i class="fa-solid fa-circle-check"></i> Nhận xét: Đầy tính sư phạm, cấu trúc lập luận chuẩn, hỗ trợ ôn thi cực kỳ hiệu quả.</span>
+                            <span class="text-[10px] text-green-600 block font-semibold border-t border-green-100 pt-2"><i class="fa-solid fa-circle-check"></i> Nhận xét: Đầy tính sư phạm, cấu trúc lập luận chuẩn, hỗ trợ ôn thi cực kỳ hiệu quả.</span>
                         </div>
                     `;
                 }
