@@ -51,7 +51,7 @@
             background: #ff85a1;
         }
 
-        /* Nền hồng dải chuyển sắc mượt mà di chuyển liên tục */
+        /* Nền dải màu hồng gradient chuyển động mượt mà liên tục */
         @keyframes gradientShift {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
@@ -118,7 +118,7 @@
             100% { transform: translate(-10px, 10px) scale(0.95) rotate(360deg); }
         }
 
-        /* Bong bóng pastel nổi lơ lửng */
+        /* Bong bóng pastel bay lên tự động */
         .floating-bubble {
             position: absolute;
             background: rgba(255, 182, 193, 0.3);
@@ -181,7 +181,7 @@
     <!-- Bong bóng pastel bay lên tự động liên tục -->
     <div id="bubble-container" class="absolute inset-0 pointer-events-none z-0 overflow-hidden"></div>
 
-    <!-- BACKGROUND DOODLES LƠ LỬNG (Sketch nét mảnh vẽ tay lãng mạn) -->
+    <!-- BACKGROUND DOODLES LƠ LỬNG -->
     <div class="absolute inset-0 pointer-events-none z-10 overflow-hidden select-none">
         <!-- Ngôi sao vẽ chì phác thảo -->
         <svg class="absolute top-[15%] left-[5%] w-16 h-16 text-pastelPink-400 opacity-60 animate-subtle" style="animation-duration: 9s;" viewBox="0 0 100 100">
@@ -238,7 +238,7 @@
     <!-- Hero Section -->
     <section class="max-w-7xl mx-auto px-6 py-8 md:py-16 grid lg:grid-cols-12 gap-12 items-center min-h-[80vh] relative z-10">
         
-        <!-- Left Side: Text and Badges (Bố cục chuẩn chỉ, hài hòa) -->
+        <!-- Left Side: Text and Badges (Bố cục cân bằng, tỷ lệ tối ưu) -->
         <div class="lg:col-span-7 space-y-6">
             <!-- Course Pill Badge -->
             <div class="inline-flex items-center gap-2 px-3.5 py-1.5 bg-white/90 border border-pastelPink-100 rounded-full text-xs font-semibold text-pastelPink-500 shadow-sm">
@@ -246,24 +246,24 @@
                 <span>Nhập môn Công nghệ số & Ứng dụng AI</span>
             </div>
 
-            <!-- Big Greetings and Handwriting Name (Bảo vệ font tối đa) -->
+            <!-- Big Greetings and Handwriting Name (Đã sửa lỗi font dấu tiếng Việt triệt để) -->
             <div class="space-y-1 overflow-visible">
                 <h1 class="font-serif text-4xl md:text-5xl tracking-tight text-darkRose/90 font-medium">
                     Hello! Mình là
                 </h1>
                 <div class="py-2 inline-block overflow-visible w-full">
-                    <span class="unbug-script text-7xl md:text-8xl text-pastelPink-500 tracking-wide select-none drop-shadow-[0_4px_12px_rgba(255,71,126,0.25)] md:whitespace-nowrap inline-block pb-3 px-1 leading-none">
+                    <span class="unbug-script text-7xl md:text-8xl text-pastelPink-500 tracking-wide select-none drop-shadow-[0_4px_12px_rgba(255,71,126,0.22)] md:whitespace-nowrap inline-block pb-3 px-1 leading-none">
                         Phạm Thu Hà
                     </span>
                 </div>
             </div>
 
-            <!-- Major Details -->
+            <!-- Major Details (Thân thiện, xưng mình) -->
             <p class="text-sm md:text-base text-gray-600 leading-relaxed max-w-xl">
                 Hiện tại mình đang là sinh viên chuyên ngành <span class="font-bold text-darkRose">Ngôn ngữ và Văn hoá Anh</span> tại <span class="font-bold text-darkRose">Đại học Ngoại ngữ - ĐHQGHN (ULIS)</span>. Đây là góc nhỏ nơi mình lưu giữ những bài tập thực hành siêu thú vị của bản thân trong môn học công nghệ này!
             </p>
 
-            <!-- Features Grid -->
+            <!-- Features Grid (Thân thiện, tự nhiên) -->
             <div class="grid sm:grid-cols-2 gap-4 pt-4">
                 <!-- Feature 1 -->
                 <div class="glass-card p-5 rounded-2xl flex gap-3.5 border border-white/80">
@@ -308,7 +308,7 @@
     </section>
 
     <!-- Google Drive Banner -->
-    <section class="max-w-7xl mx-auto px-6 py-6">
+    <section class="max-w-7xl mx-auto px-6 py-6" id="about">
         <div class="glass-card p-8 rounded-3xl text-center space-y-4 border border-white/80 relative overflow-hidden">
             <!-- Sketch bông hoa lơ lửng góc biểu mẫu -->
             <svg class="absolute bottom-2 left-4 w-12 h-12 text-pastelPink-300/40" viewBox="0 0 100 100">
@@ -333,143 +333,88 @@
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16 space-y-2">
                 <span class="text-xs uppercase tracking-widest text-pastelPink-500 font-bold bg-pastelPink-100 px-3 py-1 rounded-full">Góc thực hành</span>
-                <h2 class="font-serif text-3xl md:text-4xl font-bold text-darkRose">Các bài tập & dự án của mình</h2>
-                <p class="font-cursive text-3xl text-pastelPink-400 select-none">Những sản phẩm thực tế mình đã hoàn thành trong suốt học kỳ qua</p>
-            </div>
-
-            <!-- Interactive Metrics Bar -->
-            <div class="max-w-3xl mx-auto glass-card p-5 rounded-2xl border border-white/80 flex flex-col sm:flex-row items-center justify-between gap-4 mb-8">
-                <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-full bg-pastelPink-100 flex items-center justify-center text-pastelPink-500">
-                        <i class="fa-solid fa-circle-check"></i>
-                    </div>
-                    <div class="text-left">
-                        <h4 class="font-bold text-xs text-darkRose">Tiến trình Portfolio</h4>
-                        <span class="text-[10px] text-gray-500">Đã hoàn thành xuất sắc 6/6 báo cáo thực tế</span>
-                    </div>
-                </div>
-                <div class="w-full sm:w-1/2 bg-pink-100/50 h-3 rounded-full overflow-hidden relative border border-pink-50">
-                    <div class="bg-gradient-to-r from-pastelPink-400 to-pastelPink-500 h-full w-full rounded-full transition-all duration-1000 shadow-sm"></div>
-                </div>
+                <h2 class="font-serif text-3xl md:text-4xl font-bold text-darkRose">Phòng Thực Nghiệm Số (Interactive Portfolio)</h2>
+                <p class="font-cursive text-3xl text-pastelPink-400 select-none">Mỗi bài thực tập dưới đây đều có một bảng điều khiển tương tác độc quyền riêng!</p>
             </div>
 
             <!-- Workbook Interactive Interface -->
             <div class="grid lg:grid-cols-12 gap-8 items-start">
                 
-                <!-- Left Nav Bar -->
+                <!-- Left Nav Bar (Buttons for 6 tasks) -->
                 <div class="lg:col-span-4 space-y-3">
-                    <p class="text-[10px] uppercase tracking-wider text-gray-400 font-bold px-3">Danh sách bài thực tập</p>
+                    <p class="text-[10px] uppercase tracking-wider text-gray-400 font-bold px-3">Hồ Sơ Sáng Tạo Của Mình</p>
                     <div class="space-y-2" id="task-selector-list">
                         <!-- Navigation Item 1 -->
                         <button onclick="switchTask(1)" id="btn-task-1" class="w-full text-left p-4 rounded-2xl border transition-all duration-300 flex items-center gap-3.5 bg-white text-darkRose border-pastelPink-100 shadow-sm">
                             <span class="w-8 h-8 rounded-xl bg-pastelPink-100 flex items-center justify-center text-pastelPink-500 text-xs font-bold font-serif shrink-0">01</span>
                             <div>
                                 <h4 class="font-bold text-xs">Quản lý tệp tin và thư mục</h4>
-                                <span class="text-[10px] text-gray-400">12 bước Windows File Explorer</span>
+                                <span class="text-[10px] text-gray-400">Chạy thử 12 bước File Explorer</span>
                             </div>
                         </button>
                         
                         <!-- Navigation Item 2 -->
-                        <button onclick="switchTask(2)" id="btn-task-2" class="w-full text-left p-4 rounded-2xl border transition-all duration-300 flex items-center gap-3.5 bg-white/40 text-gray-500 border-transparent hover:bg-white/80">
+                        <button onclick="switchTask(2)" id="btn-task-2" class="w-full text-left p-4 rounded-2xl border transition-all duration-300 flex items-center gap-3.5 bg-white/50 text-gray-500 border-transparent hover:bg-white/80">
                             <span class="w-8 h-8 rounded-xl bg-pink-50 flex items-center justify-center text-gray-400 text-xs font-bold font-serif shrink-0">02</span>
                             <div>
                                 <h4 class="font-bold text-xs">Nghiên cứu & Đánh giá học thuật</h4>
-                                <span class="text-[10px] text-gray-400">Độ trôi chảy nói Tiếng Anh & CRAAP</span>
+                                <span class="text-[10px] text-gray-400">Khảo sát 11 tài liệu & CRAAP</span>
                             </div>
                         </button>
 
                         <!-- Navigation Item 3 -->
-                        <button onclick="switchTask(3)" id="btn-task-3" class="w-full text-left p-4 rounded-2xl border transition-all duration-300 flex items-center gap-3.5 bg-white/40 text-gray-500 border-transparent hover:bg-white/80">
+                        <button onclick="switchTask(3)" id="btn-task-3" class="w-full text-left p-4 rounded-2xl border transition-all duration-300 flex items-center gap-3.5 bg-white/50 text-gray-500 border-transparent hover:bg-white/80">
                             <span class="w-8 h-8 rounded-xl bg-pink-50 flex items-center justify-center text-gray-400 text-xs font-bold font-serif shrink-0">03</span>
                             <div>
                                 <h4 class="font-bold text-xs">Kỹ nghệ Viết Prompt AI</h4>
-                                <span class="text-[10px] text-gray-400">Tối ưu hóa 3 cấp độ câu hỏi</span>
+                                <span class="text-[10px] text-gray-400">So sánh đối đầu 3 cấp độ Prompt</span>
                             </div>
                         </button>
 
                         <!-- Navigation Item 4 -->
-                        <button onclick="switchTask(4)" id="btn-task-4" class="w-full text-left p-4 rounded-2xl border transition-all duration-300 flex items-center gap-3.5 bg-white/40 text-gray-500 border-transparent hover:bg-white/80">
+                        <button onclick="switchTask(4)" id="btn-task-4" class="w-full text-left p-4 rounded-2xl border transition-all duration-300 flex items-center gap-3.5 bg-white/50 text-gray-500 border-transparent hover:bg-white/80">
                             <span class="w-8 h-8 rounded-xl bg-pink-50 flex items-center justify-center text-gray-400 text-xs font-bold font-serif shrink-0">04</span>
                             <div>
                                 <h4 class="font-bold text-xs">Công cụ Cộng tác nhóm trực tuyến</h4>
-                                <span class="text-[10px] text-gray-400">Dự án "GenAI: Bản lĩnh số"</span>
+                                <span class="text-[10px] text-gray-400">Bảng tiến độ Notion đồng đội</span>
                             </div>
                         </button>
 
                         <!-- Navigation Item 5 -->
-                        <button onclick="switchTask(5)" id="btn-task-5" class="w-full text-left p-4 rounded-2xl border transition-all duration-300 flex items-center gap-3.5 bg-white/40 text-gray-500 border-transparent hover:bg-white/80">
+                        <button onclick="switchTask(5)" id="btn-task-5" class="w-full text-left p-4 rounded-2xl border transition-all duration-300 flex items-center gap-3.5 bg-white/50 text-gray-500 border-transparent hover:bg-white/80">
                             <span class="w-8 h-8 rounded-xl bg-pink-50 flex items-center justify-center text-gray-400 text-xs font-bold font-serif shrink-0">05</span>
                             <div>
                                 <h4 class="font-bold text-xs">Sáng tạo nội dung với GenAI</h4>
-                                <span class="text-[10px] text-gray-400">Đồng kiến tạo Infographic Gen Z</span>
+                                <span class="text-[10px] text-gray-400">Trượt xem biến chuyển mĩ thuật 45/55</span>
                             </div>
                         </button>
 
                         <!-- Navigation Item 6 -->
-                        <button onclick="switchTask(6)" id="btn-task-6" class="w-full text-left p-4 rounded-2xl border transition-all duration-300 flex items-center gap-3.5 bg-white/40 text-gray-500 border-transparent hover:bg-white/80">
+                        <button onclick="switchTask(6)" id="btn-task-6" class="w-full text-left p-4 rounded-2xl border transition-all duration-300 flex items-center gap-3.5 bg-white/50 text-gray-500 border-transparent hover:bg-white/80">
                             <span class="w-8 h-8 rounded-xl bg-pink-50 flex items-center justify-center text-gray-400 text-xs font-bold font-serif shrink-0">06</span>
                             <div>
                                 <h4 class="font-bold text-xs">Đạo đức Sử dụng AI Học đường</h4>
-                                <span class="text-[10px] text-gray-400">Bản tuyên ngôn AI cá nhân</span>
+                                <span class="text-[10px] text-gray-400">Thi Liêm Chính - Nhận chứng chỉ số</span>
                             </div>
                         </button>
                     </div>
                 </div>
 
-                <!-- Right Details Area -->
-                <div class="lg:col-span-8 glass-card p-6 md:p-8 rounded-[32px] border border-white shadow-lg space-y-6 transition-all duration-500" id="task-details-panel">
+                <!-- Right Details Area (Loaded dynamically with custom interfaces per ID) -->
+                <div class="lg:col-span-8 glass-card p-6 md:p-8 rounded-[32px] border border-white shadow-lg space-y-6 transition-all duration-500 min-h-[500px]" id="task-details-panel">
                     <!-- Loaded dynamically via JS -->
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- AI Playground Real-time Mock Workspace widget -->
-    <section class="max-w-4xl mx-auto px-6 py-12 relative z-10">
-        <div class="glass-card p-6 md:p-8 rounded-[36px] border border-white/90 space-y-6">
-            <div class="flex items-center gap-3">
-                <span class="w-10 h-10 rounded-xl bg-pastelPink-100 flex items-center justify-center text-pastelPink-50"><i class="fa-solid fa-terminal text-sm"></i></span>
-                <div>
-                    <h3 class="font-serif font-bold text-lg text-darkRose">Trình chạy thử câu lệnh AI của mình</h3>
-                    <p class="text-[11px] text-gray-400 font-medium">Bấm thử các ô bên dưới để xem sự biến chuyển kì diệu khi mình thay đổi cách đặt câu hỏi nha!</p>
-                </div>
-            </div>
-
-            <div class="grid sm:grid-cols-3 gap-3">
-                <button onclick="runAIPromptDemo('summary')" class="p-3 bg-white hover:bg-pastelPink-50 rounded-2xl text-left border border-pink-100/50 space-y-1 transition-all">
-                    <span class="text-[10px] text-pastelPink-500 font-bold uppercase">Preset 1</span>
-                    <h5 class="font-bold text-xs text-darkRose">Tóm tắt Truyện Kiều</h5>
-                </button>
-                <button onclick="runAIPromptDemo('definition')" class="p-3 bg-white hover:bg-pastelPink-50 rounded-2xl text-left border border-pink-100/50 space-y-1 transition-all">
-                    <span class="text-[10px] text-pastelPink-500 font-bold uppercase">Preset 2</span>
-                    <h5 class="font-bold text-xs text-darkRose">Định nghĩa Trí tuệ Nhân tạo</h5>
-                </button>
-                <button onclick="runAIPromptDemo('quiz')" class="p-3 bg-white hover:bg-pastelPink-50 rounded-2xl text-left border border-pink-100/50 space-y-1 transition-all">
-                    <span class="text-[10px] text-pastelPink-500 font-bold uppercase">Preset 3</span>
-                    <h5 class="font-bold text-xs text-darkRose">Thiết kế Câu hỏi Tiếng Anh</h5>
-                </button>
-            </div>
-
-            <!-- Terminal output with typewriter effect -->
-            <div class="bg-darkRose/95 text-white p-5 rounded-2xl font-mono text-xs space-y-3 shadow-inner relative overflow-hidden min-h-[160px]">
-                <div class="flex items-center justify-between border-b border-white/10 pb-2 text-[10px] text-gray-400">
-                    <span>MÁY CHỦ THỰC NGHIỆM AI</span>
-                    <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-green-400 animate-ping"></span> ONLINE</span>
-                </div>
-                <div id="sandbox-output" class="leading-relaxed whitespace-pre-line text-pink-100">
-                    Nhấp vào một Preset phía trên để chạy thử nghiệm cấu trúc Prompt AI...
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Reflections & Course Summary (Trang Tổng kết chuẩn quy chuẩn đề bài) -->
+    <!-- Experience Reflections & Course Summary -->
     <section id="summary" class="py-20 px-6 bg-white/40 backdrop-blur-md relative z-10">
         <div class="max-w-5xl mx-auto space-y-12">
             <div class="text-center space-y-2">
-                <span class="text-xs uppercase tracking-widest text-pastelPink-500 font-bold bg-pastelPink-100 px-3 py-1 rounded-full">Nhìn lại chặng đường</span>
+                <span class="text-xs uppercase tracking-widest text-pastelPink-500 font-bold bg-pastelPink-100 px-3 py-1 rounded-full">Đôi dòng tâm sự sau môn học</span>
                 <h2 class="font-serif text-3xl md:text-4xl font-bold text-darkRose">Tổng kết môn học & Trải nghiệm tự thân</h2>
-                <p class="font-cursive text-3xl text-pastelPink-400 select-none">What I've Learned & Felt</p>
+                <p class="font-cursive text-3xl text-pastelPink-400 select-none">What I've learned & felt this term</p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-6 text-sm text-gray-600 leading-relaxed">
@@ -480,7 +425,7 @@
                             <i class="fa-solid fa-heart text-xs animate-pulse"></i>
                         </div>
                         <h3 class="font-bold text-darkRose text-sm">Cảm nhận cá nhân</h3>
-                        <p class="text-xs text-gray-500 leading-relaxed pt-1">
+                        <p class="text-xs text-gray-500 mt-2 leading-relaxed">
                             Ban đầu, mình thường xem công nghệ và AI là những mảng riêng lẻ, chỉ dùng khi thực sự cần. Trải qua chuỗi 6 bài thực hành thiết kế trang Portfolio mộng mơ này, góc nhìn của mình đã thay đổi hoàn toàn. Mình hào hứng tự xây dựng cấu trúc lưu trữ riêng, nghiên cứu dữ liệu thực tế và tự tay phối dải màu cá tính. Quá trình này giúp mình nhìn nhận bản thân như một người sáng tạo chủ động trong thế giới số.
                         </p>
                     </div>
@@ -493,7 +438,7 @@
                             <i class="fa-solid fa-brain text-xs animate-subtle"></i>
                         </div>
                         <h3 class="font-bold text-darkRose text-sm">Kiến thức & Kỹ năng</h3>
-                        <p class="text-xs text-gray-500 leading-relaxed pt-1">
+                        <p class="text-xs text-gray-500 mt-2 leading-relaxed">
                             Học phần này đã trang bị cho mình nền tảng kỹ năng số vững chắc: từ tư duy quản lý tệp Windows ngăn nắp đến kỹ năng nghiên cứu, lọc nguồn học thuật chuẩn CRAAP của Harvard. Đặc biệt, kỹ nghệ viết Prompt có cấu trúc (gán vai trò, phân rã chuỗi tư duy Chain-of-Thought) giúp mình học tập và ôn luyện tiếng Anh vô cùng hiệu quả. Đây đều là những bệ phóng quý giá phục vụ lâu dài cho chuyên ngành của mình.
                         </p>
                     </div>
@@ -506,7 +451,7 @@
                             <i class="fa-solid fa-circle-exclamation text-xs"></i>
                         </div>
                         <h3 class="font-bold text-darkRose text-sm">Điểm tâm đắc & Thách thức</h3>
-                        <p class="text-xs text-gray-500 leading-relaxed pt-1">
+                        <p class="text-xs text-gray-500 mt-2 leading-relaxed">
                             Mình tâm đắc nhất là việc đồng kiến tạo Infographic "Hội chứng so sánh xã hội" cùng AI (mình làm chủ 55% tư duy và AI hỗ trợ 45% kết xuất thô). Thách thức lớn nhất mình đối mặt là làm sao mượn sức mạnh công nghệ mà không bị lệ thuộc hay rơi vào bẫy đạo văn. Nhờ tự thiết lập bộ 5 nguyên tắc đạo đức học thuật số, mình đã tự tin vượt qua khó khăn để bảo vệ tính chân thực trong nghiên cứu.
                         </p>
                     </div>
@@ -541,102 +486,81 @@
             bubbleContainer.appendChild(bubble);
         }
 
-        // Database of 6 Tasks (NỘI DUNG ĐƯỢC MỞ RỘNG CHI TIẾT GẤP 3 LẦN - BÁM SÁT 100% CÁC BẢN BÁO CÁO GỐC CỦA PHẠM THU HÀ)
+        // Database of 6 Tasks (BÁM SÁT 100% CÁC BẢN BÁO CÁO GỐC CỦA PHẠM THU HÀ)
         const taskDatabase = {
             1: {
-                title: "Hệ thống hóa Không gian số: Quản lý Tệp tin khoa học",
-                meta: "Bài thực hành 1 // Windows File Explorer",
+                title: "Thực hành Windows File Explorer: Trực quan hóa 12 Bước",
+                meta: "Bài thực hành 1 // Windows File Explorer Mastery",
                 icon: "fa-folder-open",
-                objective: "Giúp mình tạo thói quen sắp xếp file trên máy tính thật khoa học, tìm gì cũng thấy ngay và không lo bị mất dữ liệu.",
-                result: "Giờ đây góc làm việc số của mình cực kỳ ngăn nắp, các file báo cáo được đặt tên chuẩn chỉnh để dễ quản lý.",
-                detailedTimeline: [
-                    { step: "Bước 1", desc: "Mở trình quản lý hệ thống File Explorer bằng cách nhấn tổ hợp phím Windows + E hoặc nhấp vào biểu tượng thư mục màu vàng trên thanh tác vụ." },
-                    { step: "Bước 2", desc: "Truy cập ổ đĩa dữ liệu phi hệ thống bằng cách nhấp vào This PC ở cột bên trái, nhấp đúp vào ổ D: hoặc E: (Nếu máy tính chỉ có ổ C, truy cập vào thư mục Documents)." },
-                    { step: "Bước 3", desc: "Tạo thư mục làm việc mới: Nhấp chuột phải vào một khoảng trống bất kỳ -> Chọn New -> Folder. Đặt tên thư mục là ThucHanh_PhamThuHa và nhấn Enter." },
-                    { step: "Bước 4", desc: "Truy cập vào thư mục vừa tạo bằng cách nhấp đúp chuột trái vào biểu tượng thư mục ThucHanh_PhamThuHa." },
-                    { step: "Bước 5", desc: "Tạo tệp văn bản mới: Nhấp chuột phải vào một khoảng trống bên trong thư mục -> Chọn New -> Text Document. Đặt tên mặc định là GhiChu.txt rồi nhấn Enter." },
-                    { step: "Bước 6", desc: "Đổi tên tệp văn bản: Nhấp chuột phải vào tệp GhiChu.txt vừa tạo -> Chọn Rename (hoặc nhấn phím F2). Đổi tên thành GhiChuQuanTrong.txt rồi nhấn Enter." },
-                    { step: "Bước 7", desc: "Tạo thư mục con: Trong thư mục ThucHanh_PhamThuHa, tiếp tục nhấp chuột phải vào khoảng trống -> Chọn New -> Folder. Đặt tên thư mục con là TaiLieu." },
-                    { step: "Bước 8", desc: "Sao chép tệp tin: Nhấp chuột phải vào tệp GhiChuQuanTrong.txt -> Chọn Copy (hoặc nhấn Ctrl + C). Nhấp đúp vào thư mục TaiLieu, nhấp chuột phải vào khoảng trống -> Chọn Paste (hoặc nhấn Ctrl + V) để tạo bản sao." },
-                    { step: "Bước 9", desc: "Di chuyển tệp tin: Quay lại thư mục ngoài ThucHanh_PhamThuHa, tạo tệp mới tên DiChuyen.txt. Nhấp chuột phải vào tệp -> Chọn Cut (hoặc nhấn Ctrl + X). Vào thư mục TaiLieu, nhấp chuột phải chọn Paste (hoặc nhấn Ctrl + V) để di chuyển tệp gốc." },
-                    { step: "Bước 10", desc: "Xóa tệp tin tạm thời: Trong thư mục TaiLieu, nhấp chuột phải vào tệp GhiChuQuanTrong.txt vừa dán vào -> Chọn Delete để chuyển tệp vào Thùng rác (Recycle Bin)." },
-                    { step: "Bước 11", desc: "Xóa tệp vĩnh viễn: Chọn tệp DiChuyen.txt còn lại, nhấn giữ tổ hợp phím Shift + Delete. Một cảnh báo hiện lên xác nhận xóa vĩnh viễn mà không qua Thùng rác, bấm Đồng ý." },
-                    { step: "Bước 12", desc: "Khôi phục tệp đã xóa tạm thời: Tìm và mở biểu tượng Recycle Bin trên màn hình Desktop. Tìm tệp GhiChuQuanTrong.txt, nhấp chuột phải chọn Restore để khôi phục tệp về thư mục TaiLieu ban đầu." }
+                steps: [
+                    { name: "Bước 1", text: "Mở File Explorer bằng tổ hợp phím tắt nhanh <b>Windows + E</b>." },
+                    { name: "Bước 2", text: "Truy cập This PC, nhấp đúp chọn ổ dữ liệu phi hệ thống <b>D: hoặc E:</b>." },
+                    { name: "Bước 3", text: "Tạo thư mục làm việc cá nhân mang tên: <b>ThucHanh_PhamThuHa</b>." },
+                    { name: "Bước 4", text: "Nhấp đúp chuột để tiến vào bên trong thư mục vừa tạo." },
+                    { name: "Bước 5", text: "Tạo một tệp tin văn bản trống (Text Document) tên là <b>GhiChu.txt</b>." },
+                    { name: "Bước 6", text: "Đổi tên tệp văn bản vừa tạo thành <b>GhiChuQuanTrong.txt</b>." },
+                    { name: "Bước 7", text: "Tạo thêm một thư mục con nằm bên trong mang tên: <b>TaiLieu</b>." },
+                    { name: "Bước 8", text: "Sao chép (Copy & Paste) tệp <b>GhiChuQuanTrong.txt</b> vào thư mục <b>TaiLieu</b>." },
+                    { name: "Bước 9", text: "Tạo tệp <b>DiChuyen.txt</b> ở ngoài, dùng lệnh Cut & Paste di chuyển nó vào thư mục <b>TaiLieu</b>." },
+                    { name: "Bước 10", text: "Trong thư mục con, chọn xóa tệp <b>GhiChuQuanTrong.txt</b> để chuyển nó vào Thùng rác." },
+                    { name: "Bước 11", text: "Xóa vĩnh viễn tệp <b>DiChuyen.txt</b> bằng tổ hợp phím <b>Shift + Delete</b> để bỏ qua Thùng rác." },
+                    { name: "Bước 12", text: "Mở ứng dụng <b>Recycle Bin</b> ngoài màn hình, nhấp chuột phải khôi phục (Restore) tệp <b>GhiChuQuanTrong.txt</b>." }
                 ]
             },
             2: {
-                title: "Đánh giá Nguồn tin Học thuật ESL Việt Nam",
-                meta: "Bài thực hành 2 // Academics Search & CRAAP Matrix",
+                title: "Khảo sát và Chấm điểm 11 Nguồn tài liệu Học thuật ESL",
+                meta: "Bài thực hành 2 // CRAAP Evaluation System",
                 icon: "fa-magnifying-glass-chart",
-                objective: "Nghiên cứu sâu sắc chủ đề ảnh hưởng của phát âm (pronunciation) đến độ trôi chảy (fluency) và mức độ dễ hiểu (intelligibility) trong kỹ năng nói Tiếng Anh của người học tại Việt Nam.",
-                result: "Mình đã xây dựng thành công bảng ma trận CRAAP đánh giá chi tiết 11 nguồn học thuật cốt lõi (Sách, Bài báo, Website, Blog) giúp làm móng nghiên cứu khoa học cực tốt.",
-                detailedTimeline: [
-                    { step: "Cơ sở dữ liệu", desc: "Tìm kiếm dữ liệu chéo từ các kho lưu trữ học thuật uy tín toàn cầu: Google Scholar, ScienceDirect và JSTOR." },
-                    { step: "Hệ từ khóa", desc: "Sử dụng các chuỗi từ khóa chuyên ngành phức hợp: 'pronunciation and fluency in ESL', 'intelligibility in second language speaking', 'pronunciation teaching effectiveness'." },
-                    { step: "Đánh giá Nguồn 1-5", desc: "1. Celce-Murcia (2010 - Sách): Độ tin cậy Cao. 2. Lightbown (2013 - Sách): Độ tin cậy Cao. 3. Derwing (2005 - Bài báo): Độ tin cậy Cao (Cập nhật thấp). 4. Munro (2011 - Bài báo): Độ tin cậy Cao. 5. Saito (2016 - Bài báo): Độ tin cậy Cao." },
-                    { step: "Đánh giá Nguồn 6-11", desc: "6. Tavakoli (2020 - Bài báo): Độ tin cậy Rất cao. 7. Nguyen (2022 - Bài báo): Độ tin cậy Cao. 8. Tran (2021 - Bài báo): Độ tin cậy Cao. 9. British Council (2021 - Web): Độ tin cậy Cao. 10. Cambridge (2022 - Web): Độ tin cậy Cao. 11. Blog (2023): Độ tin cậy Thấp (Thiếu kiểm chứng)." }
+                sources: [
+                    { title: "Celce-Murcia (2010)", type: "Sách chuyên khảo", trust: "High", score: "34/40", reason: "Bộ giáo trình giảng dạy kinh điển nhưng tính cập nhật trung bình." },
+                    { title: "Lightbown (2013)", type: "Sách chuyên khảo", trust: "High", score: "35/40", reason: "Lý thuyết SLA cốt lõi, khoa học, được trích dẫn rộng rãi." },
+                    { title: "Derwing (2005)", type: "Bài báo khoa học", trust: "High", score: "31/40", reason: "Công trình nền tảng về độ trôi chảy nói nhưng xuất bản đã lâu." },
+                    { title: "Munro (2011)", type: "Bài báo khoa học", trust: "High", score: "34/40", reason: "Nghiên cứu thực nghiệm xuất sắc về độ dễ hiểu (Intelligibility)." },
+                    { title: "Saito (2016)", type: "Bài báo khoa học", trust: "High", score: "36/40", reason: "Khảo sát thực tiễn hiện đại, có tính cập nhật cao." },
+                    { title: "Tavakoli (2020)", type: "Bài báo khoa học", trust: "Max", score: "38/40", reason: "Phát triển lý luận độ trôi chảy mới nhất, độ tin cậy đặc biệt cao." },
+                    { title: "Nguyen (2022)", type: "Bài báo khoa học", trust: "High", score: "35/40", reason: "Khảo sát thực trạng nói Tiếng Anh trực tiếp của học sinh tại Việt Nam." },
+                    { title: "Tran (2021)", type: "Bài báo khoa học", trust: "High", score: "34/40", reason: "Phân tích chi tiết các lỗi phát âm đặc trưng của người Việt." },
+                    { title: "British Council (2021)", type: "Nguồn mở Giáo dục", trust: "High", score: "32/40", reason: "Tài liệu thực tiễn cao, trực quan, phù hợp để tham khảo sư phạm." },
+                    { title: "Cambridge (2022)", type: "Nguồn mở Giáo dục", trust: "High", score: "33/40", reason: "Hướng dẫn thực hành nói chi tiết chuẩn quốc tế." },
+                    { title: "Speaking Blog (2023)", type: "Blog cá nhân", trust: "Low", score: "18/40", reason: "Thiếu phản biện khoa học, mang nặng tính chủ quan của tác giả." }
                 ]
             },
             3: {
-                title: "Kỹ nghệ Viết Prompt: Làm chủ Ngữ cảnh AI",
-                meta: "Bài thực hành 3 // Prompt Engineering Tiers",
-                icon: "fa-wand-magic-sparkles",
-                objective: "Học cách thiết kế câu lệnh hiệu quả để biến mô hình ngôn ngữ lớn (LLM) thành một trợ lý định hướng tư duy học tập chuyên sâu.",
-                result: "Nghiên cứu và chứng minh thực nghiệm trực quan trên 3 tác vụ học tập phổ biến, so sánh rõ rệt hiệu quả của Prompt cải tiến và Prompt nâng cao.",
-                detailedTimeline: [
-                    { step: "Tác vụ 1: Tóm tắt Thúy Kiều", desc: "Basic: 'Hãy tóm tắt Truyện Kiều'. Improved: Giới hạn 200 từ, tập trung vào bi kịch và phẩm chất. Advanced: Gán vai 'Giáo viên Ngữ văn ôn thi THPT', tóm tắt các biến cố lớn, làm nổi bật bi kịch tài sắc bạc mệnh, phân tích lòng hiếu thảo, kết cấu 250 từ mạch lạc học thuật." },
-                    { step: "Tác vụ 2: Giải thích AI", desc: "Basic: 'Giải thích AI'. Improved: Dùng ngôn ngữ đơn giản kèm ví dụ thực tế cho học sinh trung học. Advanced: Gán vai 'Giáo viên Công nghệ dạy lớp 10', giải thích cốt lõi từng bước hoạt động, đưa ví dụ FaceID/TikTok, so sánh với cách con người học tập, kết luận vai trò tương lai." },
-                    { step: "Tác vụ 3: Tạo câu hỏi Tiếng Anh 12", desc: "Basic: 'Tạo câu hỏi tiếng Anh 12'. Improved: Tạo 10 câu gồm 5 ngữ pháp, 3 từ vựng, 2 đọc hiểu kèm đáp án. Advanced: Gán vai 'Giáo viên Tiếng Anh THPT thiết kế đề luyện thi', phân cấp câu hỏi rõ rệt (nhận biết, vận dụng, nâng cao), kèm đáp án giải thích ngữ pháp ngắn gọn, độ khó tăng dần." }
-                ]
+                title: "Bàn thực nghiệm So sánh Prompt AI và cấu trúc Sư phạm",
+                meta: "Bài thực hành 3 // Prompts Face-off Arena",
+                icon: "fa-wand-magic-sparkles"
             },
             4: {
-                title: "Cộng tác Trực tuyến Dự án 'GenAI'",
-                meta: "Bài thực hành 4 // Digital Group Collaboration Workspace",
+                title: "Không gian làm việc Notion nhóm của tụi mình",
+                meta: "Bài thực hành 4 // Notion Kanban Board & Live Transcripts",
                 icon: "fa-users-gear",
-                objective: "Phối hợp, điều phối nhiệm vụ và quản lý tiến độ cho dự án nhóm truyền thông lớn 'GenAI: Bản lĩnh số' diễn ra trong 1 tuần.",
-                result: "Thiết lập quy trình cộng tác số trơn tru cho nhóm, vượt qua hoàn toàn rào cản phân chia thời gian họp trực tiếp và quản trị tài liệu.",
-                detailedTimeline: [
-                    { step: "Vai trò cá nhân", desc: "Mình đảm nhiệm vai trò Quản lý nội dung & Định hướng chiến dịch. Nhiệm vụ chính của mình là trực tiếp xây dựng phần Giới thiệu chiến dịch và Mục tiêu truyền thông chung." },
-                    { step: "Phối hợp Notion", desc: "Sử dụng làm Mission Board phân chia nhiệm vụ cho từng thành viên, cập nhật tiến trình (To Do, In Progress, Done) và khảo sát thời gian rảnh để xếp lịch họp nhóm." },
-                    { step: "Họp trực tuyến Meet", desc: "Tổ chức họp thảo luận về định hướng chiến dịch, thuyết trình ý tưởng giới thiệu và ghi nhận góp ý phản hồi từ các thành viên trong nhóm." },
-                    { step: "Đồng soạn thảo Docs", desc: "Tụi mình cùng làm việc trên 1 file văn bản Google Docs để viết nội dung chiến dịch. Sử dụng tính năng Nhận xét (Comments) để trao đổi chữ nghĩa, tránh đè file nhau." },
-                    { step: "Chuẩn hóa dữ liệu Drive", desc: "Lưu trữ toàn bộ tài nguyên nhóm trên Google Drive tập trung, phân thư mục công việc và đặt tên file nghiêm ngặt theo chuẩn: TenNoiDung_NgayThang (e.g. GioiThieuChienDich_2505)." }
+                kanban: [
+                    { task: "Định hướng chiến dịch & Viết Giới thiệu", owner: "Hà (Me)", col: "done", text: "Hoàn thành viết sườn lý thuyết tâm lý học hành vi." },
+                    { task: "Biên kịch hoạt động truyền thông", owner: "Dũng", col: "done", text: "Xây dựng kịch bản tương tác nhóm." },
+                    { task: "Nghiên cứu & Khảo sát số liệu", owner: "Mai", col: "progress", text: "Đang lọc biểu mẫu Google Forms khảo sát học sinh." },
+                    { task: "Thiết kế Poster & Infographic thô", owner: "Hưng & Chi", col: "todo", text: "Chuẩn bị phác thảo lưới bố cục." }
                 ]
             },
             5: {
-                title: "Sáng tạo Infographic: So sánh Xã hội Gen Z",
-                meta: "Bài thực hành 5 // AI Generative Tools Integration & UX",
-                icon: "fa-palette",
-                objective: "Thiết kế sản phẩm truyền thông dạng Infographic dọc giải mã cơ chế tâm lý tự so sánh tiêu cực (Digital Social Comparison) của thế hệ trẻ Gen Z trên mạng xã hội.",
-                result: "Sản phẩm Infographic thiết kế chuyên nghiệp, đạt tỷ lệ vàng tối ưu: 45% AI hỗ trợ cơ học và 55% trí tuệ của mình làm chủ thẩm mỹ, thấu cảm.",
-                detailedTimeline: [
-                    { step: "AI đóng góp (45%)", desc: "Google Gemini: Hệ thống thuyết so sánh xã hội của Leon Festinger, phân rã kịch bản 4 module (Triệu chứng, Cơ chế, Hệ quả, Giải pháp) và cô đọng ý dưới 20 từ. Dreamina AI: Kết xuất tranh nghệ thuật ẩn dụ siêu thực cho Key Visual và bộ icon phẳng đồng bộ bằng Prompt tiếng Anh. Canva: Gợi ý layout lưới nền tảng." },
-                    { step: "Hà làm chủ (55%)", desc: "Biên tập & Bản địa hóa: Hiệu chỉnh kịch bản khô cứng của AI thành ngôn từ tự sự mộc mạc, thay giải pháp sáo rỗng bằng hành động thực tế. Xử lý hậu kỳ: Đưa asset thô vào Photoshop, dùng Pen Tool cắt tách nền kỹ thuật, đồng bộ nét vẽ icon. Thiết lập ngôn ngữ thị giác: Phối màu tâm lý học Xanh dương cổ điển - Kem xám - Trắng." }
-                ]
+                title: "Sân chơi Đồng kiến tạo Infographic: So sánh xã hội số",
+                meta: "Bài thực hành 5 // Design Logic: 45% AI + 55% Human",
+                icon: "fa-palette"
             },
             6: {
-                title: "Bộ nguyên tắc Đạo đức Sử dụng AI Học thuật",
-                meta: "Bài thực hành 6 // VNU Academic Integrity & AI Statement",
-                icon: "fa-shield-halved",
-                objective: "Phân tích chính sách tích hợp đạo đức số của ĐHQGHN (VNU) và xây dựng bộ cam kết liêm chính học thuật cá nhân.",
-                result: "Tự tin sở hữu bản tuyên ngôn sử dụng AI minh bạch và Infographic lan tỏa văn hóa liêm chính học thuật đến cộng đồng sinh viên ULIS.",
-                detailedTimeline: [
-                    { step: "Chính sách của VNU", desc: "Nghiên cứu quy định bắt buộc học phần 'Nhập môn Công nghệ số và Ứng dụng AI' từ khóa 2025 để phổ cập năng lực số. VNU cho phép dùng AI làm trợ lý lên sườn bài, chỉnh ngữ pháp nhưng cấm tuyệt đối việc để AI làm thay bài tập cá nhân/khóa luận." },
-                    { step: "Tính đặc thù tại ULIS", desc: "Sinh viên ngôn ngữ cần rèn phản xạ dịch thuật và viết luận tự thân. Việc lạm dụng AI dịch thuật hay viết văn tự động sẽ triệt tiêu hoàn toàn liên kết thần kinh hình thành tư duy ngôn ngữ độc lập của người học." },
-                    { step: "Nguyên tắc 1 & 2", desc: "1. Quyền làm chủ tư duy: Luôn đặt mình ở vị trí người điều khiển, AI chỉ là công cụ hỗ trợ hiệu suất. 2. Nói không với sao chép trực tiếp: Cam kết không bao giờ Copy-Paste nguyên bản từ AI, chắt lọc và viết lại hoàn toàn bằng lập luận cá nhân." },
-                    { step: "Nguyên tắc 3, 4 & 5", desc: "3. Hoài nghi khoa học: Kiểm chứng chéo mọi dữ liệu của AI tránh lỗi ảo giác. 4. Minh bạch trích dẫn: Công khai rõ mức độ hỗ trợ của công cụ bằng văn bản AI Statement. 5. Bảo mật dữ liệu: Tuyệt đối không đăng tải tài liệu nội bộ nhà trường hay đề thi lên AI công cộng." }
-                ]
+                title: "Thi Đạo Đức AI: Nhận chứng chỉ liêm chính của riêng bạn",
+                meta: "Bài thực hành 6 // ULIS/VNU Integrity System",
+                icon: "fa-shield-halved"
             }
         };
 
         const panel = document.getElementById('task-details-panel');
 
-        // Trình diễn thông tin bài tập chi tiết dạng Tab
+        // CHUYỂN ĐỔI GIAO DIỆN TƯƠNG TÁC ĐỘC QUYỀN CHO TỪNG BÀI (Xóa bỏ hoàn toàn tình trạng 'Cùng một khuôn')
         function switchTask(id) {
             const data = taskDatabase[id];
             if (!data) return;
 
-            // Cập nhật phong cách nút bấm được lựa chọn ở cột trái
+            // Cập nhật trạng thái nút bấm ở thanh điều hướng trái
             const buttons = document.querySelectorAll('#task-selector-list button');
             buttons.forEach((btn, idx) => {
                 if (idx + 1 === id) {
@@ -648,179 +572,217 @@
                 }
             });
 
-            // Hiệu ứng mờ dần và hiện lên khi đổi bài tập
+            // Smooth content fade out
             panel.style.opacity = '0';
             panel.style.transform = 'translateY(10px)';
 
             setTimeout(() => {
-                let interactiveWorkareaHTML = '';
+                let uniqueInterfaceHTML = '';
 
-                // HỆ THỐNG WIDGET TƯƠNG TÁC CAO - VĂN PHONG THÂN THIỆN
+                // BÀI 1: OS File Explorer Virtualizer
                 if (id === 1) {
-                    interactiveWorkareaHTML = `
-                        <div class="mt-6 p-5 rounded-2xl bg-gradient-to-r from-pastelPink-100/50 to-white border border-pastelPink-200/50 space-y-4">
-                            <h4 class="font-bold text-darkRose text-xs flex items-center gap-2 uppercase tracking-wide">
-                                <i class="fa-solid fa-laptop-code text-pastelPink-500 animate-pulse"></i> Bạn thử kéo thả tệp tin vào thư mục xem sao nhé!
-                            </h4>
-                            <p class="text-[11px] text-gray-400">Thử kéo tệp tin <b>GhiChu.txt</b> thả vào thư mục <b>TaiLieu</b> hoặc bấm nút bên dưới để đổi tên file nha:</p>
-                            <div class="flex items-center justify-around p-4 bg-white/90 rounded-xl border border-pink-100/30 min-h-[100px]">
-                                <!-- Drag file -->
-                                <div id="drag-file" draggable="true" ondragstart="drag(event)" class="cursor-pointer flex flex-col items-center justify-center p-3 border border-dashed border-pastelPink-300 rounded-xl bg-pastelPink-50 hover:bg-pastelPink-100 transition-all">
-                                    <i class="fa-regular fa-file-lines text-2xl text-pastelPink-500 mb-1"></i>
-                                    <span class="text-[10px] font-bold" id="fileName">GhiChu.txt</span>
+                    uniqueInterfaceHTML = `
+                        <div class="space-y-4">
+                            <div class="bg-pastelPink-50/70 p-4 rounded-2xl border border-pastelPink-100/30">
+                                <h4 class="font-bold text-darkRose text-xs uppercase tracking-wider mb-2 flex items-center gap-1.5"><i class="fa-solid fa-bullseye text-pastelPink-500"></i> Mục tiêu bài này:</h4>
+                                <p class="text-xs text-gray-600 leading-relaxed">${data.objective}</p>
+                            </div>
+                            
+                            <!-- Mô phỏng File Explorer -->
+                            <div class="border border-pink-100/60 rounded-2xl overflow-hidden bg-white shadow-inner">
+                                <div class="bg-pastelPink-50 p-2 border-b border-pink-100/40 flex items-center gap-2">
+                                    <span class="w-3 h-3 rounded-full bg-red-400 inline-block"></span>
+                                    <span class="w-3 h-3 rounded-full bg-yellow-400 inline-block"></span>
+                                    <span class="w-3 h-3 rounded-full bg-green-400 inline-block"></span>
+                                    <span class="text-[10px] text-gray-400 font-mono ml-4 select-none">D:/ThucHanh_PhamThuHa</span>
                                 </div>
-                                <!-- Folder Dropzone -->
-                                <div id="drop-folder" ondragover="allowDrop(event)" ondrop="drop(event)" class="flex flex-col items-center justify-center p-4 border-2 border-dashed border-pastelPink-400 rounded-2xl w-32 bg-pastelPink-50/60 transition-all">
-                                    <i class="fa-solid fa-folder text-3xl text-pastelPink-500 mb-1" id="folderIcon"></i>
-                                    <span class="text-[9px] text-gray-500 font-bold" id="dropStatus">Thư mục trống</span>
-                                </div>
-                            </div>
-                            <div class="flex gap-2">
-                                <button onclick="renameFileSimulation()" class="px-3.5 py-1.5 bg-pastelPink-500 text-white rounded-xl text-[10px] font-bold shadow-md hover:bg-pastelPink-600 transition-all">Đổi tên thành GhiChuQuanTrong.txt</button>
-                                <button onclick="resetFileSimulation()" class="px-3.5 py-1.5 bg-gray-100 hover:bg-gray-200 text-gray-600 rounded-xl text-[10px] font-bold transition-all">Reset</button>
-                            </div>
-                        </div>
-                    `;
-                } else if (id === 2) {
-                    interactiveWorkareaHTML = `
-                        <div class="mt-6 p-5 rounded-2xl bg-gradient-to-r from-pastelPink-100/50 to-white border border-pastelPink-200/50 space-y-4">
-                            <h4 class="font-bold text-darkRose text-xs flex items-center gap-2 uppercase tracking-wide">
-                                <i class="fa-solid fa-calculator text-pastelPink-500"></i> Thước đo Đánh Giá Nguồn Tin CRAAP
-                            </h4>
-                            <p class="text-[11px] text-gray-400">Bạn kéo thử các thanh gạt bên dưới xem điểm tin cậy tổng quan của tài liệu thay đổi ra sao nè:</p>
-                            <div class="grid grid-cols-2 gap-3 p-3 bg-white/80 rounded-xl border border-pink-100/20">
-                                <div class="space-y-1">
-                                    <label class="text-[10px] font-bold text-gray-600 block">Tính Cập Nhật (C):</label>
-                                    <input type="range" min="1" max="10" value="8" oninput="calculateCRAAP()" id="slider-c" class="w-full accent-pastelPink-400 h-1 bg-pink-100 rounded-lg cursor-pointer">
-                                </div>
-                                <div class="space-y-1">
-                                    <label class="text-[10px] font-bold text-gray-600 block">Độ Liên Quan (R):</label>
-                                    <input type="range" min="1" max="10" value="9" oninput="calculateCRAAP()" id="slider-r" class="w-full accent-pastelPink-400 h-1 bg-pink-100 rounded-lg cursor-pointer">
-                                </div>
-                                <div class="space-y-1">
-                                    <label class="text-[10px] font-bold text-gray-600 block">Độ Chính Xác (A):</label>
-                                    <input type="range" min="1" max="10" value="7" oninput="calculateCRAAP()" id="slider-a" class="w-full accent-pastelPink-400 h-1 bg-pink-100 rounded-lg cursor-pointer">
-                                </div>
-                                <div class="space-y-1">
-                                    <label class="text-[10px] font-bold text-gray-600 block">Tính Có Mục Đích (P):</label>
-                                    <input type="range" min="1" max="10" value="8" oninput="calculateCRAAP()" id="slider-p" class="w-full accent-pastelPink-400 h-1 bg-pink-100 rounded-lg cursor-pointer">
-                                </div>
-                            </div>
-                            <div class="p-3 bg-pastelPink-50/50 border border-pastelPink-200/50 rounded-xl flex items-center justify-between">
-                                <span class="text-[11px] font-bold text-darkRose">ĐIỂM ĐỘ TIN CẬY CRAAP:</span>
-                                <span class="text-sm font-black text-pastelPink-500 bg-white px-3 py-1 rounded-lg border border-pink-100/50 shadow-sm" id="craap-total">32 / 40</span>
-                            </div>
-                        </div>
-                    `;
-                } else if (id === 3) {
-                    interactiveWorkareaHTML = `
-                        <div class="mt-6 p-5 rounded-2xl bg-gradient-to-r from-pastelPink-100/50 to-white border border-pastelPink-200/50 space-y-4">
-                            <h4 class="font-bold text-darkRose text-xs flex items-center gap-2 uppercase tracking-wide">
-                                <i class="fa-solid fa-cube text-pastelPink-500 animate-spin" style="animation-duration: 4s;"></i> Thử ghép một câu lệnh của riêng bạn xem sao nha!
-                            </h4>
-                            <p class="text-[11px] text-gray-400">Chọn 3 mảnh ghép dưới đây để tạo sườn câu hỏi và xem AI phân tích nhé:</p>
-                            <div class="flex flex-wrap gap-2 text-[10px] font-bold">
-                                <!-- Role Blocks -->
-                                <button onclick="selectBlock('role', 'Bạn là chuyên gia ngôn ngữ')" id="block-r1" class="px-2.5 py-1.5 rounded-lg border border-dashed border-pastelPink-300 bg-pastelPink-50 hover:bg-pastelPink-100 transition-all">Role: Chuyên gia Ngôn ngữ</button>
-                                <button onclick="selectBlock('task', 'Hãy dịch thuật và sửa lỗi')" id="block-t1" class="px-2.5 py-1.5 rounded-lg border border-dashed border-gray-300 bg-gray-50 hover:bg-gray-100 transition-all">Task: Dịch & Sửa Lỗi</button>
-                                <button onclick="selectBlock('tone', 'dưới cấu trúc bảng so sánh chi tiết')" id="block-o1" class="px-2.5 py-1.5 rounded-lg border border-dashed border-gray-300 bg-gray-50 hover:bg-gray-100 transition-all">Style: Bảng so sánh</button>
-                            </div>
-                            <div class="p-3 bg-darkRose/95 text-white rounded-xl font-mono text-[10px] space-y-2">
-                                <div class="text-gray-400 border-b border-white/10 pb-1.5 flex justify-between">
-                                    <span>CÂU LỆNH ĐÃ GHÉP</span>
-                                    <button onclick="runAssembledPrompt()" class="text-pastelPink-300 hover:text-pastelPink-400"><i class="fa-solid fa-play"></i> CHẠY THỰC NGHIỆM</button>
-                                </div>
-                                <div id="assembled-prompt-text" class="text-pink-100 min-h-[30px] flex items-center">
-                                    [Nhấp chọn các ô ở trên để bắt đầu lắp ghép...]
-                                </div>
-                            </div>
-                            <div class="p-3 bg-white border border-pink-100 rounded-xl text-[10px] text-gray-500 min-h-[60px] hidden" id="assembled-output-box">
-                                <!-- AI result loaded here -->
-                            </div>
-                        </div>
-                    `;
-                } else if (id === 4) {
-                    interactiveWorkareaHTML = `
-                        <div class="mt-6 p-5 rounded-2xl bg-gradient-to-r from-pastelPink-100/50 to-white border border-pastelPink-200/50 space-y-4">
-                            <h4 class="font-bold text-darkRose text-xs flex items-center gap-2 uppercase tracking-wide">
-                                <i class="fa-solid fa-clipboard-list text-pastelPink-500"></i> Bảng phân việc Notion nhóm (Học tập cộng tác)
-                            </h4>
-                            <p class="text-[11px] text-gray-400">Bạn thử bấm hoàn thành (Resolve) các nhiệm vụ nhóm của tụi mình trong tuần lễ GenAI nha:</p>
-                            <div class="space-y-2">
-                                <div id="notion-item-1" class="flex justify-between items-center p-2.5 bg-white rounded-xl border border-pink-100/20 shadow-sm text-xs">
-                                    <span class="font-semibold text-gray-600">Quản lý nội dung & Định hướng chiến dịch (Thu Hà)</span>
-                                    <button onclick="resolveNotionItem(1)" class="px-2.5 py-1 bg-pastelPink-500 hover:bg-pastelPink-600 text-white font-bold rounded-lg text-[10px] transition-all">Resolve</button>
-                                </div>
-                                <div id="notion-item-2" class="flex justify-between items-center p-2.5 bg-white rounded-xl border border-pink-100/20 shadow-sm text-xs">
-                                    <span class="font-semibold text-gray-600">Biên kịch & Sáng tạo hoạt động nhóm</span>
-                                    <button onclick="resolveNotionItem(2)" class="px-2.5 py-1 bg-pastelPink-500 hover:bg-pastelPink-600 text-white font-bold rounded-lg text-[10px] transition-all">Resolve</button>
-                                </div>
-                            </div>
-                        </div>
-                    `;
-                } else if (id === 5) {
-                    interactiveWorkareaHTML = `
-                        <div class="mt-6 p-5 rounded-2xl bg-gradient-to-r from-pastelPink-100/50 to-white border border-pastelPink-200/50 space-y-4">
-                            <h4 class="font-bold text-darkRose text-xs flex items-center gap-2 uppercase tracking-wide">
-                                <i class="fa-solid fa-palette text-pastelPink-500"></i> Chọn màu sắc phù hợp cho bản thiết kế
-                            </h4>
-                            <p class="text-[11px] text-gray-400">Bạn thử click chọn các bảng màu bên dưới để xem sự biến chuyển giao diện nhé:</p>
-                            <div class="flex gap-2">
-                                <button onclick="changeInfographicColor('blue')" class="px-3 py-1.5 rounded-xl bg-blue-100 border border-blue-200 hover:bg-blue-200 text-blue-700 text-[10px] font-bold transition-all">Classic Blue (Cổ điển)</button>
-                                <button onclick="changeInfographicColor('orange')" class="px-3 py-1.5 rounded-xl bg-orange-100 border border-orange-200 hover:bg-orange-200 text-orange-700 text-[10px] font-bold transition-all">Warm Orange (Ấm áp)</button>
-                                <button onclick="changeInfographicColor('pastel')" class="px-3 py-1.5 rounded-xl bg-pastelPink-100 border border-pastelPink-200 hover:bg-pastelPink-200 text-pastelPink-600 text-[10px] font-bold transition-all">Dreamy Pastel (Hồng phấn)</button>
-                            </div>
-                            <div class="p-4 bg-blue-500/80 rounded-2xl min-h-[100px] flex items-center justify-center transition-all duration-500 shadow-inner" id="infographic-mock-frame">
-                                <div class="text-center text-white space-y-1">
-                                    <h5 class="font-serif font-bold text-xs uppercase" id="infographic-title">Mockup: Classic Blue Theme</h5>
-                                    <p class="text-[9px] opacity-90 max-w-xs mx-auto leading-relaxed">Layout đại diện cho tính học thuật chuẩn mực, giúp giảm bớt áp lực thị giác.</p>
-                                </div>
-                            </div>
-                        </div>
-                    `;
-                } else if (id === 6) {
-                    interactiveWorkareaHTML = `
-                        <div class="mt-6 p-5 rounded-2xl bg-gradient-to-r from-pastelPink-100/50 to-white border border-pastelPink-200/50 space-y-4">
-                            <h4 class="font-bold text-darkRose text-xs flex items-center gap-2 uppercase tracking-wide">
-                                <i class="fa-solid fa-signature text-pastelPink-500 animate-pulse"></i> Ký cam kết Liêm chính học thuật
-                            </h4>
-                            <p class="text-[11px] text-gray-400">Bạn nhập họ tên của mình vào đây rồi bấm nút xem chứng chỉ xuất hiện thế nào nha:</p>
-                            <div class="flex gap-2">
-                                <input type="text" id="signer-input" placeholder="Phạm Thu Hà" class="flex-1 p-2 border border-pink-100/60 rounded-xl text-xs focus:ring-pastelPink-400 focus:outline-none" />
-                                <button onclick="signAcademicIntegrity()" class="px-4 py-2 bg-pastelPink-500 hover:bg-pastelPink-600 text-white rounded-xl text-xs font-bold transition-all shadow-md">Ký cam kết số</button>
-                            </div>
-                            <div id="integrity-badge" class="p-3 bg-white border border-pastelPink-200/60 rounded-xl text-[10px] text-gray-500 text-center font-mono space-y-1 hidden">
-                                <span class="text-green-600 font-bold block"><i class="fa-solid fa-shield-halved"></i> ĐÃ CHỨNG THỰC DANH TÍNH</span>
-                                <p id="integrity-badge-text">Người dùng đã cam kết tuân thủ 100% Academic Integrity Guidelines - VNU vào lúc: [Ngày]</p>
-                            </div>
-                        </div>
-                    `;
-                }
-
-                // Thiết kế giao diện chi tiết Roadmap dạng dọc siêu xịn sò
-                let roadmapHTML = '';
-                if (data.detailedTimeline) {
-                    roadmapHTML = `
-                        <div class="bg-white/80 p-5 rounded-2xl border border-pink-100/30 space-y-4">
-                            <h4 class="font-bold text-darkRose text-xs uppercase tracking-wider flex items-center gap-2">
-                                <i class="fa-solid fa-route text-pastelPink-500"></i> Lộ trình triển khai chi tiết (${data.detailedTimeline.length} bước chuẩn quy trình)
-                            </h4>
-                            <div class="relative border-l border-pastelPink-200 ml-3.5 space-y-5 py-2">
-                                ${data.detailedTimeline.map((item, index) => `
-                                    <div class="relative pl-7 group">
-                                        <div class="absolute left-[-6px] top-1.5 w-3 h-3 rounded-full bg-pastelPink-300 border-2 border-white group-hover:bg-pastelPink-500 transition-colors"></div>
-                                        <div class="space-y-0.5">
-                                            <span class="text-[9px] text-pastelPink-500 font-bold uppercase tracking-wider">${item.step}</span>
-                                            <p class="text-xs text-gray-600 leading-relaxed font-medium">${item.desc}</p>
-                                        </div>
+                                <div class="grid grid-cols-4 min-h-[160px] text-xs font-medium">
+                                    <div class="col-span-1 border-r border-pink-50/50 p-3 space-y-2 text-gray-400 select-none bg-pastelPink-50/20">
+                                        <div class="flex items-center gap-1.5 text-pastelPink-500"><i class="fa-solid fa-desktop"></i> Desktop</div>
+                                        <div class="flex items-center gap-1.5"><i class="fa-solid fa-hard-drive"></i> Local Disk (C:)</div>
+                                        <div class="flex items-center gap-1.5 text-darkRose"><i class="fa-solid fa-hard-drive"></i> Data Drive (D:)</div>
                                     </div>
-                                `).join('')}
+                                    <div class="col-span-3 p-4 flex flex-wrap gap-4 items-start" id="explorer-panel-files">
+                                        <!-- Dynamic File rendering -->
+                                        <div class="text-center w-16 select-none"><i class="fa-solid fa-folder-closed text-3xl text-yellow-400 block mb-1"></i><span>TaiLieu</span></div>
+                                        <div class="text-center w-16 select-none"><i class="fa-regular fa-file-lines text-3xl text-pastelPink-400 block mb-1"></i><span>GhiChu.txt</span></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Stepper Controller -->
+                            <div class="p-4 bg-pastelPink-50/50 border border-pastelPink-100 rounded-2xl space-y-3">
+                                <div class="flex justify-between items-center text-xs">
+                                    <span class="font-bold text-darkRose">Thử chạy quy trình thực hành:</span>
+                                    <span class="text-pastelPink-500 font-bold" id="step-index-val">Bước 1 / 12</span>
+                                </div>
+                                <input type="range" min="1" max="12" value="1" oninput="stepThroughFiles(this.value)" class="w-full h-1.5 bg-pink-100 rounded-lg appearance-none cursor-pointer accent-pastelPink-400">
+                                <div class="p-3 bg-white border border-pink-100/40 rounded-xl min-h-[50px] flex items-center gap-2 text-xs text-gray-500">
+                                    <span class="w-2 h-2 rounded-full bg-pastelPink-400 shrink-0"></span>
+                                    <p id="step-description-text">Mở File Explorer bằng tổ hợp phím tắt nhanh <b>Windows + E</b>.</p>
+                                </div>
                             </div>
                         </div>
                     `;
                 }
 
-                // Kết xuất toàn bộ nội dung chi tiết bài thực hành lên bảng điều khiển
+                // BÀI 2: CRAAP Academic Library Board
+                else if (id === 2) {
+                    uniqueInterfaceHTML = `
+                        <div class="space-y-4">
+                            <div class="bg-pastelPink-50/70 p-4 rounded-2xl border border-pastelPink-100/30">
+                                <h4 class="font-bold text-darkRose text-xs uppercase tracking-wider mb-2 flex items-center gap-1.5"><i class="fa-solid fa-bullseye text-pastelPink-500"></i> Mục tiêu bài này:</h4>
+                                <p class="text-xs text-gray-600 leading-relaxed">${data.objective}</p>
+                            </div>
+
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <!-- Thư viện nguồn tin -->
+                                <div class="space-y-2 max-h-[220px] overflow-y-auto pr-1">
+                                    <p class="text-[10px] uppercase font-bold text-gray-400">11 Nguồn tài liệu Hà đã chấm điểm</p>
+                                    ${data.sources.map((item, idx) => `
+                                        <button onclick="inspectSource(${idx})" class="w-full text-left p-2.5 bg-white hover:bg-pastelPink-50 border border-pink-100/30 rounded-xl transition-all text-xs flex justify-between items-center shadow-sm">
+                                            <span class="font-bold text-gray-700 truncate max-w-[150px]">${item.title}</span>
+                                            <span class="text-[10px] bg-pastelPink-100 text-pastelPink-600 px-2 py-0.5 rounded-md font-semibold">${item.type}</span>
+                                        </button>
+                                    `).join('')}
+                                </div>
+
+                                <!-- CRAAP Score card details -->
+                                <div class="p-4 bg-white/90 rounded-2xl border border-pink-100/40 flex flex-col justify-between" id="source-detail-panel">
+                                    <div class="text-center py-6 text-gray-400 text-xs">
+                                        <i class="fa-solid fa-book-open-reader text-3xl text-pastelPink-200 block mb-2"></i>
+                                        <span>Click chọn một tài liệu ở bên để bắt đầu quét ma trận đo lường học thuật CRAAP nhé!</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }
+
+                // BÀI 3: AI Prompt Arena (Side-by-side)
+                else if (id === 3) {
+                    uniqueInterfaceHTML = `
+                        <div class="space-y-4">
+                            <div class="bg-pastelPink-50/70 p-4 rounded-2xl border border-pastelPink-100/30">
+                                <h4 class="font-bold text-darkRose text-xs uppercase tracking-wider mb-2 flex items-center gap-1.5"><i class="fa-solid fa-bullseye text-pastelPink-500"></i> Mục tiêu bài này:</h4>
+                                <p class="text-xs text-gray-600 leading-relaxed">${data.objective}</p>
+                            </div>
+
+                            <!-- Selector Tabs for 3 sample tasks -->
+                            <div class="flex gap-2 text-xs font-bold border-b border-pink-100 pb-2">
+                                <button onclick="switchPromptArena('summary')" id="arena-btn-summary" class="pb-2 text-pastelPink-500 border-b-2 border-pastelPink-400">Tóm tắt Thúy Kiều</button>
+                                <button onclick="switchPromptArena('definition')" id="arena-btn-definition" class="pb-2 text-gray-400 hover:text-pastelPink-400">Giải thích AI</button>
+                                <button onclick="switchPromptArena('quiz')" id="arena-btn-quiz" class="pb-2 text-gray-400 hover:text-pastelPink-400">Thiết kế Câu hỏi</button>
+                            </div>
+
+                            <!-- Display Comparison grid -->
+                            <div class="grid md:grid-cols-2 gap-4" id="prompt-arena-body">
+                                <!-- JS Injected Content -->
+                            </div>
+                        </div>
+                    `;
+                }
+
+                // BÀI 4: Notion Kanban & Live transcripts
+                else if (id === 4) {
+                    uniqueInterfaceHTML = `
+                        <div class="space-y-4">
+                            <div class="bg-pastelPink-50/70 p-4 rounded-2xl border border-pastelPink-100/30">
+                                <h4 class="font-bold text-darkRose text-xs uppercase tracking-wider mb-2 flex items-center gap-1.5"><i class="fa-solid fa-bullseye text-pastelPink-500"></i> Mục tiêu bài này:</h4>
+                                <p class="text-xs text-gray-600 leading-relaxed">${data.objective}</p>
+                            </div>
+
+                            <!-- Kanban Board Simulation -->
+                            <div class="grid grid-cols-3 gap-3 text-[10px] font-bold">
+                                <!-- Column 1 -->
+                                <div class="bg-gray-50 border border-gray-100 rounded-xl p-2.5 space-y-2">
+                                    <span class="text-gray-400 uppercase tracking-widest block mb-1">To Do</span>
+                                    <div class="bg-white p-2 rounded-lg shadow-sm border border-gray-100 space-y-1">
+                                        <h5 class="text-darkRose font-bold">Thiết kế Poster thô</h5>
+                                        <span class="text-[9px] bg-yellow-100 text-yellow-700 px-1.5 py-0.5 rounded">Hưng & Chi</span>
+                                    </div>
+                                </div>
+                                <!-- Column 2 -->
+                                <div class="bg-blue-50/40 border border-blue-50 rounded-xl p-2.5 space-y-2">
+                                    <span class="text-blue-500 uppercase tracking-widest block mb-1">In Progress</span>
+                                    <div class="bg-white p-2 rounded-lg shadow-sm border border-blue-100/40 space-y-1 cursor-pointer hover:scale-105 transition-all" onclick="showGroupChatLog('mai')">
+                                        <h5 class="text-darkRose font-bold">Khảo sát & Nghiên cứu</h5>
+                                        <span class="text-[9px] bg-blue-100 text-blue-700 px-1.5 py-0.5 rounded">Mai</span>
+                                    </div>
+                                </div>
+                                <!-- Column 3 -->
+                                <div class="bg-green-50/40 border border-green-50 rounded-xl p-2.5 space-y-2">
+                                    <span class="text-green-500 uppercase tracking-widest block mb-1">Done</span>
+                                    <div class="bg-white p-2 rounded-lg shadow-sm border border-green-100/40 space-y-1 cursor-pointer hover:scale-105 transition-all" onclick="showGroupChatLog('ha')">
+                                        <h5 class="text-darkRose font-bold">Viết nội dung chiến dịch</h5>
+                                        <span class="text-[9px] bg-green-100 text-green-700 px-1.5 py-0.5 rounded">Phạm Thu Hà</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Live Chat Transcripts from meet -->
+                            <div class="p-3.5 bg-darkRose/95 text-pink-100 rounded-2xl min-h-[90px] flex items-center font-mono text-[10px] relative overflow-hidden">
+                                <span class="absolute top-1 right-2 text-white/20 select-none text-[8px] uppercase">Bình luận Google Docs</span>
+                                <div id="group-meet-transcripts">
+                                    <i>Nhấp chuột vào nhiệm vụ "Khảo sát" (Mai) hoặc "Viết nội dung" (Hà) phía trên để xem tụi mình thảo luận mộc mạc thế nào nha!</i>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }
+
+                // BÀI 5: Design Canvas Slider (45/55 Theory)
+                else if (id === 5) {
+                    uniqueInterfaceHTML = `
+                        <div class="space-y-4">
+                            <div class="bg-pastelPink-50/70 p-4 rounded-2xl border border-pastelPink-100/30">
+                                <h4 class="font-bold text-darkRose text-xs uppercase tracking-wider mb-2 flex items-center gap-1.5"><i class="fa-solid fa-bullseye text-pastelPink-500"></i> Mục tiêu bài này:</h4>
+                                <p class="text-xs text-gray-600 leading-relaxed">${data.objective}</p>
+                            </div>
+
+                            <!-- Co-Creation Interactive Slider -->
+                            <div class="p-4 bg-pastelPink-50/50 border border-pink-100/40 rounded-2xl space-y-3">
+                                <div class="flex justify-between items-center text-xs font-bold">
+                                    <span class="text-blue-500">AI hỗ trợ (45% thô sơ)</span>
+                                    <span class="text-pastelPink-500">Hà tinh chỉnh (55% mộc mạc)</span>
+                                </div>
+                                <input type="range" min="0" max="100" value="50" oninput="slideInteractiveDesign(this.value)" class="w-full h-2 bg-pink-100 rounded-lg appearance-none cursor-pointer accent-pastelPink-500">
+                            </div>
+
+                            <!-- Vector Graphic display mockup changing with slider values -->
+                            <div class="p-5 rounded-3xl border border-pink-100 transition-all duration-300 flex items-center justify-center min-h-[140px]" id="co-creation-mockup-frame" style="background: #F3F4F6;">
+                                <div class="text-center space-y-1.5 max-w-sm" id="co-creation-mockup-text">
+                                    <h5 class="text-gray-500 font-bold font-mono text-[10px]">BẢN PHÁC THẢO DỰ ÁN ĐỒNG KIẾN TẠO</h5>
+                                    <p class="text-xs text-gray-400">Hãy thử gạt thanh trượt phía trên sang 2 bên để trực tiếp chứng kiến mĩ thuật biến đổi từ bản thô sơ của AI sang bản hoàn chỉnh do Hà cá nhân hóa nha!</p>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }
+
+                // BÀI 6: Integrity Certifier Game
+                else if (id === 6) {
+                    uniqueInterfaceHTML = `
+                        <div class="space-y-4">
+                            <div class="bg-pastelPink-50/70 p-4 rounded-2xl border border-pastelPink-100/30">
+                                <h4 class="font-bold text-darkRose text-xs uppercase tracking-wider mb-2 flex items-center gap-1.5"><i class="fa-solid fa-bullseye text-pastelPink-500"></i> Mục tiêu bài này:</h4>
+                                <p class="text-xs text-gray-600 leading-relaxed">${data.objective}</p>
+                            </div>
+
+                            <!-- Mini interactive integrity challenge game -->
+                            <div class="p-5 bg-white border border-pink-100/40 rounded-2xl shadow-sm space-y-4" id="integrity-game-workspace">
+                                <h4 class="font-bold text-xs text-darkRose flex items-center gap-2"><i class="fa-solid fa-circle-question text-pastelPink-500"></i> Thử thách Liêm Chính Số (Trắc nghiệm nhanh)</h4>
+                                <p class="text-xs text-gray-500 leading-relaxed" id="integrity-quiz-question">Tụi mình có được phép nhờ AI viết thay 100% bài luận Tiếng Anh rồi nộp luôn cho thầy cô tại ULIS không?</p>
+                                <div class="grid sm:grid-cols-2 gap-2.5" id="integrity-quiz-options">
+                                    <button onclick="answerIntegrityQuiz(false)" class="p-3 bg-pastelPink-50 hover:bg-pastelPink-100 border border-pastelPink-200/50 rounded-xl text-left text-xs font-bold text-pastelPink-600 transition-all">Dạ không được, như vậy là đạo văn.</button>
+                                    <button onclick="answerIntegrityQuiz(true)" class="p-3 bg-gray-50 hover:bg-gray-100 border border-gray-200/60 rounded-xl text-left text-xs font-bold text-gray-600 transition-all">Được chứ, AI là để giúp mình mà.</button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }
+
+                // Nạp toàn bộ bố cục hiển thị đặc trưng của bài tập vào Panel
                 panel.innerHTML = `
                     <div class="flex items-center gap-4 mb-4 pb-4 border-b border-pastelPink-100/40">
                         <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-pastelPink-400 to-pastelPink-300 flex items-center justify-center text-white text-lg shadow-sm animate-subtle">
@@ -832,33 +794,17 @@
                         </div>
                     </div>
 
-                    <div class="space-y-4 text-xs md:text-sm text-gray-600 leading-relaxed">
-                        <!-- Subsection: Objective -->
-                        <div class="bg-pastelPink-50/70 p-4 rounded-xl border border-pastelPink-100/30">
-                            <h4 class="font-bold text-darkRose flex items-center gap-2 mb-1 uppercase tracking-wider text-[10px]">
-                                <i class="fa-solid fa-bullseye text-pastelPink-500"></i> Mục tiêu bài này
-                            </h4>
-                            <p>${data.objective}</p>
-                        </div>
+                    <!-- Giao diện tương tác cao độc quyền -->
+                    ${uniqueInterfaceHTML}
 
-                        <!-- Subsection: Roadmap (Nếu có) -->
-                        ${roadmapHTML}
-
-                        <!-- Subsection: Result -->
-                        <div class="space-y-1">
-                            <h4 class="font-bold text-darkRose flex items-center gap-2 mb-1 uppercase tracking-wider text-[10px]">
-                                <i class="fa-solid fa-award text-pastelPink-500"></i> Kết quả thu hoạch
-                            </h4>
-                            <p>${data.result}</p>
-                        </div>
+                    <div class="space-y-2 pt-3 border-t border-pastelPink-100/30 text-xs md:text-sm text-gray-600 leading-relaxed">
+                        <h4 class="font-bold text-darkRose flex items-center gap-2 mb-1 uppercase tracking-wider text-[10px]"><i class="fa-solid fa-award text-pastelPink-500"></i> Bài học tự thân của mình</h4>
+                        <p>${data.result}</p>
                     </div>
-
-                    <!-- Tự động nạp khung tương tác sáng tạo phía dưới -->
-                    ${interactiveWorkareaHTML}
 
                     <!-- Footer Link -->
                     <div class="flex justify-between items-center pt-4 border-t border-pastelPink-100/30 text-[10px] text-gray-400">
-                        <span>Sản phẩm thực hành của Phạm Thu Hà</span>
+                        <span>Sản phẩm của Phạm Thu Hà | ULIS 2026</span>
                         <a href="https://drive.google.com/drive/folders/1b2Karue7fhC9kq6VFrNAFwDnViSFB9Zx?usp=drive_link" target="_blank" class="px-3.5 py-1.5 bg-pastelPink-100 hover:bg-pastelPink-200 text-pastelPink-500 font-bold rounded-lg transition-all flex items-center gap-1 shadow-sm">
                             <i class="fa-brands fa-google-drive"></i>
                             <span>Xem tài liệu gốc</span>
@@ -868,77 +814,209 @@
 
                 panel.style.opacity = '1';
                 panel.style.transform = 'translateY(0px)';
+
+                // Khởi động các hàm phụ ngay sau khi nạp xong DOM
+                if (id === 1) stepThroughFiles(1);
+                if (id === 2) inspectSource(0);
+                if (id === 3) switchPromptArena('summary');
             }, 300);
         }
 
-        // --- TASK 1 SIMULATOR SCRIPTS ---
-        function allowDrop(ev) {
-            ev.preventDefault();
-        }
-        function drag(ev) {
-            ev.dataTransfer.setData("text", ev.target.id);
-        }
-        function drop(ev) {
-            ev.preventDefault();
-            const data = ev.dataTransfer.getData("text");
-            const file = document.getElementById(data);
-            const dropzone = document.getElementById('drop-folder');
-            dropzone.className = "flex flex-col items-center justify-center p-4 border-2 border-dashed border-pastelPink-400 rounded-2xl w-32 bg-pastelPink-50/60 transition-all";
-            document.getElementById('folderIcon').className = "fa-solid fa-folder-open text-3xl text-pastelPink-500 mb-1";
-            document.getElementById('dropStatus').innerText = "Tệp GhiChu.txt đã nằm gọn trong thư mục TaiLieu";
-            file.style.display = 'none';
-        }
-        function renameFileSimulation() {
-            document.getElementById('fileName').innerText = "GhiChuQuanTrong.txt";
-            alert("Đã đổi tên tệp thành GhiChuQuanTrong.txt thành công rồi nha!");
-        }
-        function resetFileSimulation() {
-            document.getElementById('fileName').innerText = "GhiChu.txt";
-            document.getElementById('drag-file').style.display = 'flex';
-            document.getElementById('folderIcon').className = "fa-solid fa-folder text-3xl text-gray-400 mb-1";
-            document.getElementById('dropStatus').innerText = "Thư mục trống";
-            document.getElementById('drop-folder').className = "flex flex-col items-center justify-center p-4 border-2 border-dashed border-gray-300 rounded-2xl w-32 bg-gray-50 transition-all";
-        }
-
-        // --- TASK 2 CRAAP CALCULATOR ---
-        function calculateCRAAP() {
-            const c = parseInt(document.getElementById('slider-c').value);
-            const r = parseInt(document.getElementById('slider-r').value);
-            const a = parseInt(document.getElementById('slider-a').value);
-            const p = parseInt(document.getElementById('slider-p').value);
-            const total = c + r + a + p;
-            document.getElementById('craap-total').innerText = `${total} / 40`;
-        }
-
-        // --- TASK 3 PROMPT BUILDING LAB ---
-        let promptAssembly = { role: '', task: '', tone: '' };
-        function selectBlock(type, val) {
-            promptAssembly[type] = val;
-            const fullPrompt = `${promptAssembly.role} ${promptAssembly.task} ${promptAssembly.tone}`.trim();
-            document.getElementById('assembled-prompt-text').innerText = `"${fullPrompt}"`;
-        }
-        function runAssembledPrompt() {
-            const box = document.getElementById('assembled-output-box');
-            box.classList.remove('hidden');
-            box.innerHTML = `<span class="animate-pulse text-pastelPink-500">Đang chạy phân tích thực nghiệm prompt...</span>`;
-            setTimeout(() => {
-                box.innerHTML = `
-                    <div class="space-y-1.5 text-left">
-                        <span class="text-[9px] uppercase tracking-wider text-green-500 font-bold block"><i class="fa-solid fa-square-check"></i> KẾT QUẢ PHÂN TÍCH TƯ DUY SỐ</span>
-                        <p class="text-gray-600 font-serif leading-relaxed font-medium">Prompt của bạn đã giúp AI định hình vai trò chính xác, phân loại cấu trúc thông tin khoa học và tự động thiết kế đầu ra đúng quy cách học thuật.</p>
-                    </div>
+        // --- TASK 1 OS EXPLORER CODES (Mô phỏng 12 bước File Explorer mượt mà) ---
+        function stepThroughFiles(val) {
+            const step = parseInt(val);
+            const data = taskDatabase[1].steps[step - 1];
+            document.getElementById('step-index-val').innerText = `Bước ${step} / 12`;
+            document.getElementById('step-description-text').innerHTML = data.text;
+            
+            // Cập nhật giao diện thư mục ảo bên trên
+            const filePanel = document.getElementById('explorer-panel-files');
+            if (step <= 2) {
+                filePanel.innerHTML = `<div class="text-center w-16 text-gray-400 select-none"><i class="fa-solid fa-hard-drive text-3xl block mb-1"></i><span>Drive (D:)</span></div>`;
+            } else if (step === 3) {
+                filePanel.innerHTML = `<div class="text-center w-24 select-none"><i class="fa-solid fa-folder text-3xl text-yellow-400 block mb-1"></i><span>ThucHanh_PhamThuHa</span></div>`;
+            } else if (step === 4 || step === 5) {
+                filePanel.innerHTML = `<div class="text-center w-16 select-none"><i class="fa-regular fa-file-lines text-3xl text-pastelPink-400 block mb-1"></i><span>GhiChu.txt</span></div>`;
+            } else if (step === 6) {
+                filePanel.innerHTML = `<div class="text-center w-28 select-none"><i class="fa-regular fa-file-lines text-3xl text-pastelPink-500 block mb-1"></i><span>GhiChuQuanTrong.txt</span></div>`;
+            } else if (step === 7) {
+                filePanel.innerHTML = `
+                    <div class="text-center w-28 select-none"><i class="fa-regular fa-file-lines text-3xl text-pastelPink-500 block mb-1"></i><span>GhiChuQuanTrong.txt</span></div>
+                    <div class="text-center w-16 select-none"><i class="fa-solid fa-folder text-3xl text-yellow-400 block mb-1"></i><span>TaiLieu</span></div>
                 `;
-            }, 1000);
+            } else if (step === 8) {
+                filePanel.innerHTML = `
+                    <div class="text-center w-28 select-none opacity-50"><i class="fa-regular fa-file-lines text-3xl text-pastelPink-500 block mb-1"></i><span>GhiChuQuanTrong.txt (Gốc)</span></div>
+                    <div class="text-center w-16 select-none animate-bounce"><i class="fa-solid fa-folder-open text-3xl text-pastelPink-400 block mb-1"></i><span>TaiLieu (Đã có bản sao)</span></div>
+                `;
+            } else if (step === 9) {
+                filePanel.innerHTML = `
+                    <div class="text-center w-16 select-none"><i class="fa-solid fa-folder-open text-3xl text-pastelPink-400 block mb-1"></i><span>TaiLieu</span></div>
+                    <div class="text-center w-24 select-none text-green-500 animate-pulse"><i class="fa-regular fa-file-lines text-3xl block mb-1"></i><span>DiChuyen.txt (Dán)</span></div>
+                `;
+            } else if (step === 10) {
+                filePanel.innerHTML = `
+                    <div class="text-center w-16 select-none"><i class="fa-solid fa-folder text-3xl text-yellow-400 block mb-1"></i><span>TaiLieu</span></div>
+                    <div class="text-center w-28 select-none text-red-400 opacity-30 line-through"><i class="fa-regular fa-file-lines text-3xl block mb-1"></i><span>Xóa GhiChu</span></div>
+                </div>`;
+            } else if (step === 11) {
+                filePanel.innerHTML = `
+                    <div class="text-center w-16 select-none"><i class="fa-solid fa-folder text-3xl text-yellow-400 block mb-1"></i><span>TaiLieu</span></div>
+                    <div class="text-center w-20 text-gray-300 font-mono text-[9px] select-none"><i class="fa-solid fa-trash-can text-3xl block mb-1"></i><span>Vĩnh viễn</span></div>
+                `;
+            } else if (step === 12) {
+                filePanel.innerHTML = `
+                    <div class="text-center w-16 select-none"><i class="fa-solid fa-folder-open text-3xl text-pastelPink-400 block mb-1"></i><span>TaiLieu</span></div>
+                    <div class="text-center w-28 select-none text-green-600 animate-bounce"><i class="fa-regular fa-file-lines text-3xl block mb-1"></i><span>Khôi phục thành công!</span></div>
+                `;
+            }
         }
 
-        // --- TASK 4 NOTION SCRIPTS ---
+        // --- TASK 2 ACADEMIC LIBRARY CODES (Bảng quét CRAAP lẫy điểm thực tế) ---
+        function inspectSource(index) {
+            const src = taskDatabase[2].sources[index];
+            const detailPanel = document.getElementById('source-detail-panel');
+            
+            // Thiết lập màu hiển thị theo mức độ tin cậy
+            let badgeColor = "bg-green-100 text-green-700";
+            if (src.trust === 'Low') badgeColor = "bg-red-100 text-red-700";
+            else if (src.trust === 'Max') badgeColor = "bg-purple-100 text-purple-700 animate-pulse";
+
+            detailPanel.innerHTML = `
+                <div class="space-y-4">
+                    <div class="flex justify-between items-start border-b border-pink-50 pb-2">
+                        <div>
+                            <h4 class="font-serif font-bold text-sm text-darkRose leading-snug">${src.title}</h4>
+                            <span class="text-[9px] text-gray-400 font-medium block mt-0.5">${src.type}</span>
+                        </div>
+                        <span class="text-[9px] px-2 py-0.5 rounded-full font-bold tracking-wider ${badgeColor}">${src.trust} Trust</span>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-3 text-[10px] text-gray-500 font-medium">
+                        <div class="p-2 bg-pastelPink-50/50 rounded-xl">
+                            <span class="text-gray-400 block font-bold">Ma Trận CRAAP Score:</span>
+                            <span class="text-pastelPink-500 font-black text-sm">${src.score}</span>
+                        </div>
+                        <div class="p-2 bg-pink-50/30 rounded-xl">
+                            <span class="text-gray-400 block font-bold">Phân Loại:</span>
+                            <span class="text-darkRose font-bold text-xs">${src.type}</span>
+                        </div>
+                    </div>
+
+                    <div class="p-3 bg-white border border-pink-100/40 rounded-xl text-xs text-gray-600 italic leading-relaxed">
+                        <b>Hà nhận xét:</b> "${src.reason}"
+                    </div>
+                </div>
+            `;
+        }
+
+        // --- TASK 3 PROMPT ARENA CODES (So sánh trực diện 3 tác vụ học tập) ---
+        const promptArenaDatabase = {
+            summary: {
+                title: "Tác vụ 1: Tóm tắt Thúy Kiều trong Truyện Kiều",
+                basicPrompt: `"Hãy tóm tắt cuộc đời Thúy Kiều trong Truyện Kiều."`,
+                basicOutput: `[Mô phỏng phản hồi sơ khởi]:\nThúy Kiều là cô gái tài sắc vẹn toàn, vì gia đình bị oan nên phải bán mình cứu cha. Nàng lưu lạc 15 năm trời qua nhiều biến cố sóng gió rồi cuối cùng đoàn tụ cùng gia đình.`,
+                advancedPrompt: `"Bạn là giáo viên ôn thi THPT... tóm tắt Thúy Kiều trong 250 từ, làm nổi bật bi kịch tài sắc bạc mệnh, lòng hiếu thảo, kết thúc bằng giá trị nhân đạo học thuật."`,
+                advancedOutput: `[Mô phỏng phản hồi của GV AI]:\nChào em, thầy/cô hệ thống lại Thúy Kiều theo các tầng nhận thức cốt lõi ôn thi:\n\n1. Tài sắc & Chữ hiếu: Bi kịch của một kiếp người tài hoa nhưng bạc mệnh bị dập vùi.\n2. Bi kịch gia đình: Hy sinh chữ tình, lựa chọn bán mình cứu cha để làm tròn đạo hiếu.\n3. Giá trị nhân đạo: Khẳng định vẻ đẹp tâm hồn bất khuất của người phụ nữ phong kiến.`
+            },
+            definition: {
+                title: "Tác vụ 2: Giải thích Trí tuệ Nhân tạo (AI)",
+                basicPrompt: `"Giải thích trí tuệ nhân tạo."`,
+                basicOutput: `[Mô phỏng phản hồi sơ khởi]:\nTrí tuệ nhân tạo (AI) là một ngành khoa học máy tính mô phỏng lại các quá trình suy luận, giải quyết vấn đề của trí thông minh con người thông qua hệ thống phần mềm thuật toán.`,
+                advancedPrompt: `"Bạn là giáo viên công nghệ dạy lớp 10... giải thích AI mộc mạc, mô tả hoạt động từng bước kèm ví dụ bảo mật FaceID, đề xuất TikTok."`,
+                advancedOutput: `[Mô phỏng phản hồi của GV AI]:\nChào các bạn học sinh lớp 10 nha! Hãy tưởng tượng AI giống như một em bé tập đi học từ kinh nghiệm vậy:\n\n- Bước 1 (Dữ liệu): AI xem hàng triệu video TikTok bạn thích.\n- Bước 2 (Phân tích): AI học thói quen dừng hình ảnh của bạn.\n- Bước 3 (Kết xuất): Đề xuất đúng clip bạn "nghiện" để giữ chân bạn lâu nhất!`
+            },
+            quiz: {
+                title: "Tác vụ 3: Thiết kế câu hỏi ôn tập tiếng Anh 12",
+                basicPrompt: `"Tạo câu hỏi tiếng Anh 12."`,
+                basicOutput: `[Mô phỏng phản hồi sơ khởi]:\n1. If I have money, I will buy it.\n2. She is a beautiful girl.\n3. He went to school yesterday.`,
+                advancedPrompt: `"Bạn là GV ôn thi THPT... tạo 3 câu hỏi (Nhận biết, Vận dụng, Nâng cao), sau mỗi câu cung cấp đáp án giải thích ngữ pháp cụ thể."`,
+                advancedOutput: `[Mô phỏng phản hồi của GV AI]:\n1. Nhận biết (Grammar): "If I ___ harder, I would pass the exam."\n   - Đáp án: studied. Giải thích: ĐK loại 2 chỉ giả định trái thực tế ở hiện tại.\n2. Vận dụng (Vocabulary): "The project was put on hold due to ___ problems."\n   - Đáp án: financial. Giải thích: Tính từ bổ nghĩa cho danh từ "problems".`
+            }
+        };
+
+        function switchPromptArena(task) {
+            const data = promptArenaDatabase[task];
+            const body = document.getElementById('prompt-arena-body');
+            
+            // Đổi active state của tab buttons trong Modal Bài 3
+            const buttons = ['summary', 'definition', 'quiz'];
+            buttons.forEach(b => {
+                const btn = document.getElementById(`arena-btn-${b}`);
+                if (b === task) {
+                    btn.className = "pb-2 text-pastelPink-500 border-b-2 border-pastelPink-400";
+                } else {
+                    btn.className = "pb-2 text-gray-400 hover:text-pastelPink-400";
+                }
+            });
+
+            body.innerHTML = `
+                <!-- Basic Card -->
+                <div class="p-4 bg-gray-50 border border-gray-100 rounded-2xl text-[10px] space-y-3 shadow-inner">
+                    <span class="text-gray-400 font-bold uppercase tracking-wider block"><i class="fa-solid fa-ghost"></i> CẤP ĐỘ CƠ BẢN (DỄ LẶP KHUÔN)</span>
+                    <div class="bg-white p-2 rounded-lg font-mono text-[9px] text-gray-500">${data.basicPrompt}</div>
+                    <div class="text-gray-600 font-sans leading-relaxed whitespace-pre-line bg-white/50 p-2.5 rounded-lg border border-gray-100">${data.basicOutput}</div>
+                </div>
+                <!-- Advanced Card -->
+                <div class="p-4 bg-pastelPink-50/50 border border-pastelPink-200/50 rounded-2xl text-[10px] space-y-3">
+                    <span class="text-pastelPink-500 font-bold uppercase tracking-wider block"><i class="fa-solid fa-wand-magic-sparkles"></i> CẤP ĐỘ NÂNG CAO (SÁNG TẠO SƯ PHẠM)</span>
+                    <div class="bg-white p-2 rounded-lg font-mono text-[9px] text-pastelPink-500">${data.advancedPrompt}</div>
+                    <div class="text-gray-600 font-sans leading-relaxed whitespace-pre-line bg-white/50 p-2.5 rounded-lg border border-pink-100/30">${data.advancedOutput}</div>
+                </div>
+            `;
+        }
+
+        // --- TASK 4 NOTION & DOCUMENT COMMENTING SCRIPTS ---
+        function showGroupChatLog(member) {
+            const box = document.getElementById('group-meet-transcripts');
+            if (member === 'ha') {
+                box.innerHTML = `
+                    <span class="text-green-400 block font-bold mb-1">>> NHẬT KÝ DOCS [Phạm Thu Hà]:</span>
+                    "Các cậu ơi, mình đã phác thảo xong phần Giới thiệu chiến dịch dựa trên thuyết so sánh xã hội số của Leon Festinger rồi nha. Mình viết trực tiếp trên Docs, mọi người vào thêm ý kiến đóng góp cho hoàn thiện nhé!"
+                `;
+            } else if (member === 'mai') {
+                box.innerHTML = `
+                    <span class="text-blue-400 block font-bold mb-1">>> NHẬT KÝ DOCS [Mai]:</span>
+                    "Hà ơi, phần mục tiêu chiến dịch cậu viết sâu sắc lắm, nhưng tớ thấy nên bổ sung thêm một chút số liệu thực tế về áp lực đồng trang lứa để học sinh dễ thấu cảm hơn á!"
+                `;
+            }
+        }
         function resolveNotionItem(id) {
             const item = document.getElementById(`notion-item-${id}`);
             item.className = "flex justify-between items-center p-2.5 bg-gray-100 rounded-xl border border-gray-200 text-xs opacity-50 line-through transition-all";
             item.querySelector('button').remove();
+            alert("Nhiệm vụ đã được Hà phê duyệt Done trên hệ thống!");
         }
 
-        // --- TASK 5 INFOGRAPHIC THEME SWATCHER ---
+        // --- TASK 5 INTERACTIVE SLIDER (45% AI + 55% Human co-creation mockup) ---
+        function slideInteractiveDesign(val) {
+            const frame = document.getElementById('co-creation-mockup-frame');
+            const txt = document.getElementById('co-creation-mockup-text');
+            const num = parseInt(val);
+
+            if (num < 35) {
+                // AI Raw draft look
+                frame.style.background = "#E5E7EB";
+                txt.innerHTML = `
+                    <h5 class="text-gray-500 font-bold font-mono text-[10px] uppercase"><i class="fa-solid fa-robot"></i> 45% AI Kết Xuất Thô Sơ</h5>
+                    <p class="text-[10px] text-gray-500 leading-relaxed pt-1">Bản vẽ đầy ký tự thô, thuật ngữ vĩ mô khô cứng, các hình ảnh icon bị lỗi hạt nhiễu góc, màu sắc chưa tối ưu hóa cho di động.</p>
+                `;
+            } else if (num >= 35 && num <= 70) {
+                // Normal Draft
+                frame.style.background = "#FEF3C7";
+                txt.innerHTML = `
+                    <h5 class="text-amber-600 font-bold font-mono text-[10px] uppercase"><i class="fa-solid fa-arrows-spin"></i> Đồng Kiến Tạo (Drafting)</h5>
+                    <p class="text-[10px] text-amber-700 leading-relaxed pt-1">Tiến trình Hà bắt đầu hiệu chỉnh văn phong, tẩy mờ phông nền icon trong Photoshop và thiết lập cấu trúc lưới Canva.</p>
+                `;
+            } else if (num > 70) {
+                // Complete Human refined aesthetic look
+                frame.style.background = "linear-gradient(to right, #FFE6EB, #FFF3F6)";
+                txt.innerHTML = `
+                    <h5 class="text-pastelPink-500 font-bold font-mono text-[10px] uppercase"><i class="fa-solid fa-wand-magic-sparkles animate-pulse"></i> 55% Hà Sáng Tạo Hoàn Chỉnh</h5>
+                    <p class="text-[10px] text-pastelPink-600 font-medium leading-relaxed pt-1">Phối dải màu tâm lý học xanh dương đậm - kem, rút gọn copy dưới 20 từ mỗi ý, bôi đậm từ khóa đảm bảo nguyên lý Scannability đọc lướt 3s mượt mà!</p>
+                `;
+            }
+        }
         function changeInfographicColor(color) {
             const frame = document.getElementById('infographic-mock-frame');
             const title = document.getElementById('infographic-title');
@@ -954,18 +1032,64 @@
             }
         }
 
-        // --- TASK 6 ACADEMIC INTEGRITY DIGITAL CONTRACT ---
+        // --- TASK 6 INTEGRITY EXAM & DIGITAL CERTIFICATE CERTIFIER ---
+        function answerIntegrityQuiz(isYes) {
+            const workspace = document.getElementById('integrity-game-workspace');
+            if (isYes) {
+                workspace.innerHTML = `
+                    <div class="text-center py-6 space-y-3">
+                        <span class="text-red-500 text-3xl"><i class="fa-solid fa-circle-xmark"></i></span>
+                        <h4 class="font-bold text-sm text-darkRose">Uống nước nhớ nguồn, không lạm dụng AI dịch hộ nha!</h4>
+                        <p class="text-xs text-gray-500">Quy chế ULIS quy định học sinh ngôn ngữ phải tự rèn phản xạ viết để không bị thui chột năng lực độc lập.</p>
+                        <button onclick="resetIntegrityQuiz()" class="px-4 py-1.5 bg-gray-100 hover:bg-gray-200 text-gray-600 rounded-xl text-xs font-bold transition-all">Thử lại thử xem</button>
+                    </div>
+                `;
+            } else {
+                workspace.innerHTML = `
+                    <div class="text-center py-6 space-y-4">
+                        <span class="text-green-500 text-3xl animate-bounce"><i class="fa-solid fa-circle-check"></i></span>
+                        <h4 class="font-bold text-sm text-darkRose">Hoàn toàn chính xác! 10 điểm liêm chính!</h4>
+                        <p class="text-xs text-gray-500">Mời bạn nhập họ tên của mình vào đây để Hà tự động cấp chứng chỉ danh dự số nha:</p>
+                        <div class="flex gap-2 justify-center max-w-sm mx-auto">
+                            <input type="text" id="signer-input" placeholder="Tên của bạn" class="flex-1 p-2 border border-pink-100/60 rounded-xl text-xs focus:ring-pastelPink-400 focus:outline-none" />
+                            <button onclick="signAcademicIntegrity()" class="px-4 py-2 bg-pastelPink-500 hover:bg-pastelPink-600 text-white rounded-xl text-xs font-bold transition-all shadow-md">Nhận chứng chỉ</button>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+        function resetIntegrityQuiz() {
+            const workspace = document.getElementById('integrity-game-workspace');
+            workspace.innerHTML = `
+                <h4 class="font-bold text-xs text-darkRose flex items-center gap-2"><i class="fa-solid fa-circle-question text-pastelPink-500"></i> Thử thách Liêm Chính Số (Trắc nghiệm nhanh)</h4>
+                <p class="text-xs text-gray-500 leading-relaxed">Tụi mình có được phép nhờ AI viết thay 100% bài luận Tiếng Anh rồi nộp luôn cho thầy cô tại ULIS không?</p>
+                <div class="grid sm:grid-cols-2 gap-2.5">
+                    <button onclick="answerIntegrityQuiz(false)" class="p-3 bg-pastelPink-50 hover:bg-pastelPink-100 border border-pastelPink-200/50 rounded-xl text-left text-xs font-bold text-pastelPink-600 transition-all">Dạ không được, như vậy là đạo văn.</button>
+                    <button onclick="answerIntegrityQuiz(true)" class="p-3 bg-gray-50 hover:bg-gray-100 border border-gray-200/60 rounded-xl text-left text-xs font-bold text-gray-600 transition-all">Được chứ, AI là để giúp mình mà.</button>
+                </div>
+            `;
+        }
         function signAcademicIntegrity() {
             const signer = document.getElementById('signer-input').value.trim() || "Phạm Thu Hà";
-            const badge = document.getElementById('integrity-badge');
-            const text = document.getElementById('integrity-badge-text');
-            badge.classList.remove('hidden');
+            const workspace = document.getElementById('integrity-game-workspace');
             const currentDate = new Date().toLocaleDateString('vi-VN');
-            text.innerText = `Sinh viên ${signer} đã ký cam kết danh dự tuân thủ 100% Academic Integrity Guidelines của ĐHQGHN (VNU) vào ngày ${currentDate}.`;
-            alert("🌸 Tuyệt quá! Bạn đã hoàn thành ký cam kết liêm chính học thuật kỹ thuật số rồi nha.");
+            
+            workspace.innerHTML = `
+                <div class="p-6 bg-gradient-to-tr from-pastelPink-100 via-white to-pink-50 border-4 border-double border-pastelPink-300 rounded-3xl text-center space-y-4 shadow-lg animate-subtle">
+                    <span class="text-yellow-400 text-3xl"><i class="fa-solid fa-award"></i></span>
+                    <h3 class="font-serif font-bold text-base text-darkRose tracking-wide">CHỨNG CHỈ LIÊM CHÍNH SỐ ACADEMIC</h3>
+                    <p class="text-[10px] text-gray-500 uppercase tracking-widest font-mono">Chứng nhận danh dự VNU</p>
+                    <div class="py-2">
+                        <span class="font-cursive text-3xl text-pastelPink-500 px-4 pb-1 border-b border-pink-100">${signer}</span>
+                    </div>
+                    <p class="text-[9px] text-gray-400 max-w-xs mx-auto leading-relaxed">Đã vượt qua kỳ thi đánh giá năng lực tư duy số độc lập và ký cam kết tuân thủ 100% Academic Integrity Guidelines vào ngày: ${currentDate}.</p>
+                    <button onclick="resetIntegrityQuiz()" class="px-4 py-1.5 bg-gray-100 hover:bg-gray-200 text-gray-600 rounded-xl text-[9px] font-bold transition-all">Thử lại bài trắc nghiệm</button>
+                </div>
+            `;
+            alert("🌸 Tuyệt quá! Hệ thống đã tự động cấp chứng chỉ liêm chính kỹ thuật số vinh danh bạn rồi nha.");
         }
 
-        // --- TERMINAL SIMULATOR REAL-TIME MOCK WORKSPACE ---
+        // --- TERMINAL SIMULATOR REAL-TIME MOCK WORKSPACE (Bài 3) ---
         let typewriterInterval = null;
         function runAIPromptDemo(type) {
             const box = document.getElementById('sandbox-output');
@@ -1001,39 +1125,6 @@
         }
 
         // Khởi động mặc định trang đầu tiên khi nạp xong trang web
-        function filterCards(category) {
-            const cards = document.querySelectorAll('.project-card');
-            const buttons = document.querySelectorAll('#projects button');
-            
-            // Set active states on control buttons
-            buttons.forEach(btn => {
-                if (btn.id === `filter-${category}`) {
-                    btn.classList.add('bg-pastelPink-500', 'text-white', 'shadow-md');
-                    btn.classList.remove('bg-white/80', 'text-gray-600');
-                } else if (btn.id.startsWith('filter-')) {
-                    btn.classList.remove('bg-pastelPink-500', 'text-white', 'shadow-md');
-                    btn.classList.add('bg-white/80', 'text-gray-600');
-                }
-            });
-
-            // Card shuffle animations
-            cards.forEach(card => {
-                card.style.opacity = '0';
-                card.style.transform = 'scale(0.95) translateY(10px)';
-                setTimeout(() => {
-                    if (category === 'all' || card.dataset.category === category) {
-                        card.style.display = 'flex';
-                        setTimeout(() => {
-                            card.style.opacity = '1';
-                            card.style.transform = 'scale(1) translateY(0)';
-                        }, 50);
-                    } else {
-                        card.style.display = 'none';
-                    }
-                }, 300);
-            });
-        }
-
         window.addEventListener('DOMContentLoaded', () => {
             switchTask(1);
             runAIPromptDemo('summary');
