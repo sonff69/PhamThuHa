@@ -169,7 +169,7 @@
         }
     </style>
 </head>
-<body class="animated-bg text-darkRose font-sans min-h-screen relative overflow-x-hidden">
+<body class="animated-gradient-bg text-darkRose font-sans min-h-screen relative overflow-x-hidden">
 
     <!-- Ambient Colored Blobs -->
     <div class="ambient-container">
@@ -238,7 +238,7 @@
     <!-- Hero Section -->
     <section class="max-w-7xl mx-auto px-6 py-8 md:py-16 grid lg:grid-cols-12 gap-12 items-center min-h-[80vh] relative z-10">
         
-        <!-- Left Side: Text and Badges (Bố cục cân bằng, tỷ lệ tối ưu) -->
+        <!-- Left Side: Text and Badges -->
         <div class="lg:col-span-7 space-y-6">
             <!-- Course Pill Badge -->
             <div class="inline-flex items-center gap-2 px-3.5 py-1.5 bg-white/90 border border-pastelPink-100 rounded-full text-xs font-semibold text-pastelPink-500 shadow-sm">
@@ -423,7 +423,7 @@
                     </div>
                 </div>
 
-                <!-- Right Details Area -->
+                <!-- Right Details Area (Thực nghiệm tương tác đột phá từng bài tập - Văn phong thân thiện) -->
                 <div class="lg:col-span-8 glass-card p-6 md:p-8 rounded-[32px] border border-white shadow-lg space-y-6 transition-all duration-500" id="task-details-panel">
                     <!-- Loaded dynamically via JS -->
                 </div>
@@ -431,13 +431,33 @@
         </div>
     </section>
 
+    <!-- Detailed High-Fidelity Modal -->
+    <div id="interactive-modal" class="fixed inset-0 z-50 hidden overflow-y-auto">
+        <div class="fixed inset-0 bg-pastelPink-100/30 backdrop-blur-md transition-opacity duration-300" onclick="closeInteractiveModal()"></div>
+        
+        <div class="flex items-center justify-center min-h-screen p-4 relative z-10">
+            <div class="glass-card w-full max-w-3xl rounded-[36px] shadow-2xl p-6 md:p-8 relative transition-all duration-300 transform scale-95 opacity-0" id="modal-wrapper">
+                
+                <!-- Close Button -->
+                <button onclick="closeInteractiveModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-white hover:bg-romanticPink-100 flex items-center justify-center text-pastelPink-500 transition-colors shadow-sm">
+                    <i class="fa-solid fa-xmark text-sm"></i>
+                </button>
+
+                <!-- Modal Content Container -->
+                <div id="modal-container-inner" class="space-y-6">
+                    <!-- Loaded dynamically via JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Experience Reflections & Course Summary (Trang Tổng kết chuẩn quy định) -->
     <section id="summary" class="py-20 px-6 bg-white/40 backdrop-blur-md relative z-10">
         <div class="max-w-5xl mx-auto space-y-12">
             <div class="text-center space-y-2">
                 <span class="text-xs uppercase tracking-widest text-pastelPink-500 font-bold bg-pastelPink-100 px-3 py-1 rounded-full">Đôi dòng tâm sự sau môn học</span>
                 <h2 class="font-serif text-3xl md:text-4xl font-bold text-darkRose">Tổng kết môn học & Trải nghiệm tự thân</h2>
-                <p class="font-cursive text-3xl text-pastelPink-400 select-none">My Reflection & Growth</p>
+                <p class="font-cursive text-3xl text-pastelPink-400 select-none">What I've Learned & Felt</p>
             </div>
 
             <!-- 3 Columns for 3 main criteria in homework template -->
@@ -476,7 +496,7 @@
                         </div>
                         <h3 class="font-bold text-darkRose text-sm">Điểm tâm đắc & Thách thức</h3>
                         <p class="text-xs text-gray-500 mt-2 leading-relaxed">
-                            Phần mình thích nhất chính là đồng kiến tạo sản phẩm Infographic "So sánh xã hội" cùng AI (45% AI hỗ trợ và 55% tư duy con người định hình thẩm mỹ). Thách thức lớn nhất mình gặp phải là làm sao sử dụng AI một cách thông minh, có đạo đức mà không bị phụ thuộc hoàn toàn. Bằng cách thiết lập bộ 5 nguyên tắc liêm chính học thuật cá nhân, mình đã tự tin vượt qua rào cản này để hoàn thành tốt học phần.
+                            Phần mình thích nhất chính là đồng kiến tạo sản phẩm Infographic "So sánh xã hội" cùng AI (45% AI hỗ trợ và 55% tư duy con người định hướng thẩm mỹ). Thách thức lớn nhất mình gặp phải là làm sao sử dụng AI một cách thông minh, có đạo đức mà không bị phụ thuộc hoàn toàn. Bằng cách thiết lập bộ 5 nguyên tắc liêm chính học thuật cá nhân, mình đã tự tin vượt qua rào cản này để hoàn thành tốt học phần.
                         </p>
                     </div>
                 </div>
@@ -484,17 +504,32 @@
         </div>
     </section>
 
-    <!-- Footer Area -->
-    <footer class="py-12 border-t border-pastelPink-100/50 bg-white/60 text-center text-xs text-gray-500 relative z-20">
-        <div class="max-w-7xl mx-auto px-6 space-y-4">
-            <div class="font-serif font-bold text-darkRose text-base tracking-wide">Phạm Thu Hà</div>
-            <p class="text-[10px] text-pastelPink-500 font-semibold tracking-wider uppercase">Khoa Ngôn ngữ và Văn hoá Anh - Trường Đại học Ngoại ngữ - ĐHQGHN</p>
-            <p class="text-[10px] text-gray-400">© 2026 Phạm Thu Hà. Designed with 🌸 Soft Pink Aura Gradients & Quicksand Font. All rights reserved.</p>
-        </div>
-    </footer>
-
     <!-- Interactive Script Logic -->
     <script>
+        // JS Sinh hạt bong bóng pastel bay lên tự động liên tục
+        const bubbleContainer = document.getElementById('bubble-container');
+        for (let i = 0; i < 15; i++) {
+            spawnBubble();
+        }
+
+        function spawnBubble() {
+            const bubble = document.createElement('div');
+            bubble.className = 'floating-bubble';
+            const size = Math.random() * 20 + 8;
+            bubble.style.width = `${size}px`;
+            bubble.style.height = `${size}px`;
+            bubble.style.left = `${Math.random() * 100}vw`;
+            bubble.style.bottom = `-20px`;
+            bubble.style.animationDuration = `${Math.random() * 6 + 10}s`; // Tốc độ trôi từ 10s-16s
+            bubble.style.animationDelay = `${Math.random() * 6}s`;
+            
+            bubble.addEventListener('animationend', () => {
+                bubble.remove();
+                spawnBubble();
+            });
+            bubbleContainer.appendChild(bubble);
+        }
+
         // Database of 6 Tasks (Bám sát tài liệu thực tế của bạn - Văn phong xưng mình thân thiện)
         const taskDatabase = {
             1: {
@@ -739,7 +774,7 @@
                         </div>
                     </div>
 
-                    <!-- Tự động nạp khung tương tác sáng tạo phía dưới -->
+                    <!-- Tự động nạp khu vực tương tác sáng tạo phía dưới -->
                     ${interactiveWorkareaHTML}
 
                     <!-- Footer Link -->
