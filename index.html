@@ -659,7 +659,7 @@
 
         const panel = document.getElementById('task-details-panel');
 
-        // CHUYỂN ĐỔI GIAO DIỆN TƯƠNG TÁC ĐỘC QUYỀN CHO TỪNG BÀI
+        // CHUYỂN ĐỔI GIAO DIỆN TƯƠNG TÁC ĐỘC QUYỀN CHO TỪNG BÀI (Xóa bỏ hoàn toàn tình trạng 'Cùng một khuôn')
         function switchTask(id) {
             const data = taskDatabase[id];
             if (!data) return;
@@ -828,7 +828,7 @@
                     `;
                 }
 
-                // BÀI 5: Design Canvas Slider (45/55 Theory)
+                // BÀI 5: Design Canvas Slider (45/55 Theory) + Chèn Ảnh infor.jpg FULL SIZE
                 else if (id === 5) {
                     uniqueInterfaceHTML = `
                         <div class="space-y-4">
@@ -846,6 +846,14 @@
                                 <div class="text-center space-y-1.5 max-w-sm" id="co-creation-mockup-text">
                                     <h5 class="text-gray-500 font-bold font-mono text-[10px]">BẢN PHÁC THẢO DỰ ÁN ĐỒNG KIẾN TẠO</h5>
                                     <p class="text-xs text-gray-400">Hãy thử gạt thanh trượt phía trên sang 2 bên để trực tiếp chứng kiến mĩ thuật biến đổi từ bản thô sơ của AI sang bản hoàn chỉnh do Hà cá nhân hóa nha!</p>
+                                </div>
+                            </div>
+
+                            <!-- Ảnh sản phẩm Infographic gốc, lấp đầy full khung và bóng mờ, không chú thích -->
+                            <div class="mt-6 space-y-3">
+                                <p class="text-[10px] uppercase tracking-wider text-gray-400 font-bold"><i class="fa-solid fa-image"></i> Bản Infographic hoàn chỉnh của mình:</p>
+                                <div class="rounded-3xl overflow-hidden border border-pink-100 bg-white shadow-md max-w-lg mx-auto group cursor-pointer hover:shadow-lg transition-all duration-500">
+                                    <img src="infor.jpg" alt="Sản phẩm Infographic - Phạm Thu Hà" class="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-102">
                                 </div>
                             </div>
                         </div>
@@ -1135,20 +1143,6 @@
                     <h5 class="text-pastelPink-500 font-bold font-mono text-[10px] uppercase"><i class="fa-solid fa-wand-magic-sparkles animate-pulse"></i> 55% Hà Sáng Tạo Hoàn Chỉnh</h5>
                     <p class="text-[10px] text-pastelPink-600 font-medium leading-relaxed pt-1">Phối dải màu tâm lý học xanh dương đậm - kem, rút gọn copy dưới 20 từ mỗi ý, bôi đậm từ khóa đảm bảo nguyên lý Scannability đọc lướt 3s mượt mà!</p>
                 `;
-            }
-        }
-        function changeInfographicColor(color) {
-            const frame = document.getElementById('infographic-mock-frame');
-            const title = document.getElementById('infographic-title');
-            if (color === 'blue') {
-                frame.className = "bg-[#1E3A8A] rounded-2xl min-h-[100px] flex items-center justify-center transition-all duration-500 shadow-inner";
-                title.innerText = "Mockup: Classic Blue Theme";
-            } else if (color === 'orange') {
-                frame.className = "bg-[#EA580C] rounded-2xl min-h-[100px] flex items-center justify-center transition-all duration-500 shadow-inner";
-                title.innerText = "Mockup: Warm Orange Theme";
-            } else if (color === 'pastel') {
-                frame.className = "bg-pastelPink-400 rounded-2xl min-h-[100px] flex items-center justify-center transition-all duration-500 shadow-inner";
-                title.innerText = "Mockup: Dreamy Pastel Theme";
             }
         }
 
