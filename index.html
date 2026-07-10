@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phạm Thu Hà Portfolio</title>
+    <title>Phạm Thu Hà - My Digital Portfolio</title>
     <!-- Fonts chuẩn hóa Unicode tiếng Việt tuyệt đối bảo vệ hiển thị, không lỗi font -->
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <!-- FontAwesome Icons -->
@@ -391,7 +391,7 @@
                             <span class="w-8 h-8 rounded-xl bg-pastelPink-100 flex items-center justify-center text-pastelPink-500 text-xs font-bold font-serif shrink-0">01</span>
                             <div>
                                 <h4 class="font-bold text-xs">Quản lý tệp tin và thư mục</h4>
-                                <span class="text-[10px] text-gray-400">12 bước Windows File Explorer</span>
+                                <span class="text-[10px] text-gray-400">Chạy thử 12 bước File Explorer</span>
                             </div>
                         </button>
                         
@@ -450,7 +450,46 @@
         </div>
     </section>
 
-    <!-- Experience Reflections & Course Summary (Trang Tổng kết chuẩn quy định) -->
+    <!-- AI Playground Real-time Mock Workspace widget -->
+    <section class="max-w-4xl mx-auto px-6 py-12 relative z-10">
+        <div class="glass-card p-6 md:p-8 rounded-[36px] border border-white/90 space-y-6">
+            <div class="flex items-center gap-3">
+                <span class="w-10 h-10 rounded-xl bg-pastelPink-100 flex items-center justify-center text-pastelPink-50"><i class="fa-solid fa-terminal text-sm"></i></span>
+                <div>
+                    <h3 class="font-serif font-bold text-lg text-darkRose">Trình chạy thử câu lệnh AI của mình</h3>
+                    <p class="text-[11px] text-gray-400 font-medium">Bấm thử các ô bên dưới để xem sự biến chuyển kì diệu khi mình thay đổi cách đặt câu hỏi nha!</p>
+                </div>
+            </div>
+
+            <div class="grid sm:grid-cols-3 gap-3">
+                <button onclick="runAIPromptDemo('summary')" class="p-3 bg-white hover:bg-pastelPink-50 rounded-2xl text-left border border-pink-100/50 space-y-1 transition-all">
+                    <span class="text-[10px] text-pastelPink-500 font-bold uppercase">Preset 1</span>
+                    <h5 class="font-bold text-xs text-darkRose">Tóm tắt Truyện Kiều</h5>
+                </button>
+                <button onclick="runAIPromptDemo('definition')" class="p-3 bg-white hover:bg-pastelPink-50 rounded-2xl text-left border border-pink-100/50 space-y-1 transition-all">
+                    <span class="text-[10px] text-pastelPink-500 font-bold uppercase">Preset 2</span>
+                    <h5 class="font-bold text-xs text-darkRose">Định nghĩa Trí tuệ Nhân tạo</h5>
+                </button>
+                <button onclick="runAIPromptDemo('quiz')" class="p-3 bg-white hover:bg-pastelPink-50 rounded-2xl text-left border border-pink-100/50 space-y-1 transition-all">
+                    <span class="text-[10px] text-pastelPink-500 font-bold uppercase">Preset 3</span>
+                    <h5 class="font-bold text-xs text-darkRose">Thiết kế Câu hỏi Tiếng Anh</h5>
+                </button>
+            </div>
+
+            <!-- Terminal output with typewriter effect -->
+            <div class="bg-darkRose/95 text-white p-5 rounded-2xl font-mono text-xs space-y-3 shadow-inner relative overflow-hidden min-h-[160px]">
+                <div class="flex items-center justify-between border-b border-white/10 pb-2 text-[10px] text-gray-400">
+                    <span>MÁY CHỦ THỰC NGHIỆM AI</span>
+                    <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-green-400 animate-ping"></span> ONLINE</span>
+                </div>
+                <div id="sandbox-output" class="leading-relaxed whitespace-pre-line text-pink-100">
+                    Nhấp vào một Preset phía trên để chạy thử nghiệm cấu trúc Prompt AI...
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Reflections & Course Summary (Trang Tổng kết chuẩn quy chuẩn đề bài) -->
     <section id="summary" class="py-20 px-6 bg-white/40 backdrop-blur-md relative z-10">
         <div class="max-w-5xl mx-auto space-y-12">
             <div class="text-center space-y-2">
@@ -473,7 +512,7 @@
                     </div>
                 </div>
 
-                <!-- Bullet 2: Kiến thức & Kỹ năng cốt lộ -->
+                <!-- Bullet 2: Kiến thức & Kỹ năng cốt lõi -->
                 <div class="glass-card p-6 rounded-3xl space-y-3 border border-white flex flex-col justify-between">
                     <div>
                         <div class="w-9 h-9 rounded-xl bg-pastelPink-100 flex items-center justify-center text-pastelPink-500 mb-3">
@@ -513,30 +552,6 @@
 
     <!-- Interactive Script Logic -->
     <script>
-        // JS Sinh hạt bong bóng pastel bay lên tự động liên tục
-        const bubbleContainer = document.getElementById('bubble-container');
-        for (let i = 0; i < 15; i++) {
-            spawnBubble();
-        }
-
-        function spawnBubble() {
-            const bubble = document.createElement('div');
-            bubble.className = 'floating-bubble';
-            const size = Math.random() * 20 + 8;
-            bubble.style.width = `${size}px`;
-            bubble.style.height = `${size}px`;
-            bubble.style.left = `${Math.random() * 100}vw`;
-            bubble.style.bottom = `-20px`;
-            bubble.style.animationDuration = `${Math.random() * 6 + 10}s`; // Tốc độ trôi từ 10s-16s
-            bubble.style.animationDelay = `${Math.random() * 6}s`;
-            
-            bubble.addEventListener('animationend', () => {
-                bubble.remove();
-                spawnBubble();
-            });
-            bubbleContainer.appendChild(bubble);
-        }
-
         // Database of 6 Tasks (BÁM SÁT 100% CÁC BẢN BÁO CÁO GỐC CỦA PHẠM THU HÀ)
         const taskDatabase = {
             1: {
@@ -545,19 +560,19 @@
                 icon: "fa-folder-open",
                 objective: "Giúp mình tạo thói quen sắp xếp file trên máy tính thật khoa học, tìm gì cũng thấy ngay và không lo bị mất dữ liệu.",
                 result: "Giờ đây góc làm việc số của mình cực kỳ ngăn nắp, các file báo cáo được đặt tên chuẩn chỉnh để dễ quản lý.",
-                detailedTimeline: [
-                    { step: "Bước 1", desc: "Mở trình quản lý hệ thống File Explorer bằng cách nhấn tổ hợp phím Windows + E hoặc nhấp vào biểu tượng thư mục màu vàng trên thanh tác vụ." },
-                    { step: "Bước 2", desc: "Truy cập ổ đĩa dữ liệu phi hệ thống bằng cách nhấp vào This PC ở cột bên trái, nhấp đúp vào ổ D: hoặc E: (Nếu máy tính chỉ có ổ C, truy cập vào thư mục Documents)." },
-                    { step: "Bước 3", desc: "Tạo thư mục làm việc mới: Nhấp chuột phải vào một khoảng trống bất kỳ -> Chọn New -> Folder. Đặt tên thư mục là ThucHanh_PhamThuHa và nhấn Enter." },
-                    { step: "Bước 4", desc: "Truy cập vào thư mục vừa tạo bằng cách nhấp đúp chuột trái vào biểu tượng thư mục ThucHanh_PhamThuHa." },
-                    { step: "Bước 5", desc: "Tạo tệp văn bản mới: Nhấp chuột phải vào một khoảng trống bên trong thư mục -> Chọn New -> Text Document. Đặt tên mặc định là GhiChu.txt rồi nhấn Enter." },
-                    { step: "Bước 6", desc: "Đổi tên tệp văn bản: Nhấp chuột phải vào tệp GhiChu.txt vừa tạo -> Chọn Rename (hoặc nhấn phím F2). Đổi tên thành GhiChuQuanTrong.txt rồi nhấn Enter." },
-                    { step: "Bước 7", desc: "Tạo thư mục con: Trong thư mục ThucHanh_PhamThuHa, tiếp tục nhấp chuột phải vào khoảng trống -> Chọn New -> Folder. Đặt tên thư mục con là TaiLieu." },
-                    { step: "Bước 8", desc: "Sao chép tệp tin: Nhấp chuột phải vào tệp GhiChuQuanTrong.txt -> Chọn Copy (hoặc nhấn Ctrl + C). Nhấp đúp vào thư mục TaiLieu, nhấp chuột phải vào khoảng trống -> Chọn Paste (hoặc nhấn Ctrl + V) để tạo bản sao." },
-                    { step: "Bước 9", desc: "Di chuyển tệp tin: Quay lại thư mục ngoài ThucHanh_PhamThuHa, tạo tệp mới tên DiChuyen.txt. Nhấp chuột phải vào tệp -> Chọn Cut (hoặc nhấn Ctrl + X). Vào thư mục TaiLieu, nhấp chuột phải chọn Paste (hoặc nhấn Ctrl + V) để di chuyển tệp gốc." },
-                    { step: "Bước 10", desc: "Xóa tệp tin tạm thời: Trong thư mục TaiLieu, nhấp chuột phải vào tệp GhiChuQuanTrong.txt vừa dán vào -> Chọn Delete để chuyển tệp vào Thùng rác (Recycle Bin)." },
-                    { step: "Bước 11", desc: "Xóa tệp vĩnh viễn: Chọn tệp DiChuyen.txt còn lại, nhấn giữ tổ hợp phím Shift + Delete. Một cảnh báo hiện lên xác nhận xóa vĩnh viễn mà không qua Thùng rác, bấm Đồng ý." },
-                    { step: "Bước 12", desc: "Khôi phục tệp đã xóa tạm thời: Tìm và mở biểu tượng Recycle Bin trên màn hình Desktop. Tìm tệp GhiChuQuanTrong.txt, nhấp chuột phải chọn Restore để khôi phục tệp về thư mục TaiLieu ban đầu." }
+                steps: [
+                    { name: "Bước 1", text: "Mở trình quản lý hệ thống File Explorer bằng cách nhấn tổ hợp phím Windows + E hoặc nhấp vào biểu tượng thư mục màu vàng trên thanh tác vụ." },
+                    { name: "Bước 2", text: "Truy cập ổ đĩa dữ liệu phi hệ thống bằng cách nhấp vào This PC ở cột bên trái, nhấp đúp vào ổ D: hoặc E: (Nếu máy tính chỉ có ổ C, truy cập vào thư mục Documents)." },
+                    { name: "Bước 3", text: "Tạo thư mục làm việc mới: Nhấp chuột phải vào một khoảng trống bất kỳ -> Chọn New -> Folder. Đặt tên thư mục là ThucHanh_PhamThuHa và nhấn Enter." },
+                    { name: "Bước 4", text: "Truy cập vào thư mục vừa tạo bằng cách nhấp đúp chuột trái vào biểu tượng thư mục ThucHanh_PhamThuHa." },
+                    { name: "Bước 5", text: "Tạo tệp văn bản mới: Nhấp chuột phải vào một khoảng trống bên trong thư mục -> Chọn New -> Text Document. Đặt tên mặc định là GhiChu.txt rồi nhấn Enter." },
+                    { name: "Bước 6", text: "Đổi tên tệp văn bản: Nhấp chuột phải vào tệp GhiChu.txt vừa tạo -> Chọn Rename (hoặc nhấn phím F2). Đổi tên thành GhiChuQuanTrong.txt rồi nhấn Enter." },
+                    { name: "Bước 7", text: "Tạo thêm một thư mục con nằm bên trong mang tên: <b>TaiLieu</b>." },
+                    { name: "Bước 8", text: "Sao chép (Copy & Paste) tệp <b>GhiChuQuanTrong.txt</b> vào thư mục <b>TaiLieu</b>." },
+                    { name: "Bước 9", text: "Tạo tệp <b>DiChuyen.txt</b> ở ngoài, dùng lệnh Cut & Paste di chuyển nó vào thư mục <b>TaiLieu</b>." },
+                    { name: "Bước 10", text: "Trong thư mục con, chọn xóa tệp <b>GhiChuQuanTrong.txt</b> để chuyển nó vào Thùng rác." },
+                    { name: "Bước 11", text: "Xóa vĩnh viễn tệp <b>DiChuyen.txt</b> bằng tổ hợp phím <b>Shift + Delete</b> để bỏ qua Thùng rác." },
+                    { name: "Bước 12", text: "Mở ứng dụng <b>Recycle Bin</b> ngoài màn hình, nhấp chuột phải khôi phục (Restore) tệp <b>GhiChuQuanTrong.txt</b>." }
                 ]
             },
             2: {
@@ -623,8 +638,8 @@
                 objective: "Thiết kế sản phẩm truyền thông dạng Infographic dọc giải mã cơ chế hành vi 'Áp lực đồng trang lứa' (Peer Pressure) của Gen Z trên mạng xã hội.",
                 result: "Sản phẩm Infographic thiết kế chuyên nghiệp, đạt tỷ lệ vàng tối ưu: 45% AI hỗ trợ cơ học và 55% trí tuệ của mình làm chủ thẩm mỹ, thấu cảm.",
                 detailedTimeline: [
-                    { step: "AI đóng góp (45%)", desc: "Google Gemini: Hệ thống thuyết so sánh xã hội của Leon Festinger, phân rã kịch bản 4 module (Triệu chứng, Cơ chế, Hệ quả, Giải pháp) và cô đọng ý dưới 20 từ. Dreamina AI: Kết xuất tranh nghệ thuật ẩn dụ siêu thực cho Key Visual và bộ icon phẳng đồng bộ bằng Prompt tiếng Anh. Canva: Gợi ý layout lưới nền tảng." },
-                    { step: "Hà làm chủ (55%)", desc: "Biên tập & Bản địa hóa: Hiệu chỉnh kịch bản khô cứng của AI thành ngôn từ tự sự mộc mạc, thay giải pháp sáo rỗng bằng hành động thực tế. Xử lý hậu kỳ: Đưa asset thô vào Photoshop, dùng Pen Tool cắt tách nền kỹ thuật, đồng bộ nét vẽ icon. Thiết lập ngôn ngữ thị giác: Phối màu tâm lý học Xanh dương cổ điển - Kem xám - Trắng." }
+                    { step: "AI đóng góp (45%)", desc: "Google Gemini: Thuyết so sánh xã hội, phân rã kịch bản 4 module (Triệu chứng, Cơ chế, Hệ quả, Giải pháp) và cô đọng ý dưới 20 từ. Dreamina AI: Kết xuất tranh Key Visual bằng Prompt tiếng Anh. Canva: Gợi ý layout lưới nền tảng." },
+                    { step: "Hà làm chủ (55%)", desc: "Biên tập & Bản địa hóa: Hiệu chỉnh kịch bản thô của AI thành ngôn từ tự sự mộc mạc, thay giải pháp sáo rỗng bằng hành động thực tế. Xử lý hậu kỳ: Đưa asset thô vào Photoshop, dùng Pen Tool cắt tách nền kỹ thuật, đồng bộ nét vẽ icon. Thiết lập ngôn ngữ thị giác: Phối màu tâm lý học Xanh dương cổ điển - Kem xám - Trắng." }
                 ]
             },
             6: {
@@ -644,7 +659,7 @@
 
         const panel = document.getElementById('task-details-panel');
 
-        // CHUYỂN ĐỔI GIAO DIỆN TƯƠNG TÁC ĐỘC QUYỀN CHO TỪNG BÀI (Xóa bỏ hoàn toàn tình trạng 'Cùng một khuôn')
+        // CHUYỂN ĐỔI GIAO DIỆN TƯƠNG TÁC ĐỘC QUYỀN CHO TỪNG BÀI
         function switchTask(id) {
             const data = taskDatabase[id];
             if (!data) return;
@@ -714,9 +729,22 @@
                 else if (id === 2) {
                     uniqueInterfaceHTML = `
                         <div class="space-y-4">
+                            <!-- CRAAP Definition Card (Định nghĩa CRAAP tiếng Việt mộc mạc) -->
+                            <div class="bg-pastelPink-50/70 p-4 rounded-xl border border-pastelPink-100/30 text-xs text-gray-600 leading-relaxed space-y-2">
+                                <h4 class="font-bold text-darkRose flex items-center gap-1.5 uppercase text-[10px] tracking-wider"><i class="fa-solid fa-lightbulb text-pastelPink-500"></i> Tiêu chuẩn CRAAP là gì nhỉ?</h4>
+                                <p class="text-[11px] text-gray-500">Đây là bộ tiêu chuẩn vàng giúp mình chấm điểm độ tin cậy của tài liệu nghiên cứu nói tiếng Anh đó:</p>
+                                <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1.5 text-[11px] text-gray-600 list-disc list-inside">
+                                    <li><b>C - Currency (Tính cập nhật):</b> Tài liệu xuất bản khi nào, có quá cũ không?</li>
+                                    <li><b>R - Relevance (Độ liên quan):</b> Có thực sự khớp và giúp ích cho đề tài nói tiếng Anh của mình không?</li>
+                                    <li><b>A - Authority (Độ tin cậy tác giả):</b> Ai viết tài liệu này, họ có phải chuyên gia uy tín không?</li>
+                                    <li><b>A - Accuracy (Độ chính xác):</b> Thông tin có chuẩn xác, có nguồn đối chứng rõ ràng không?</li>
+                                    <li><b>P - Purpose (Mục đích viết):</b> Tài liệu viết ra nhằm giáo dục phi thương mại hay quảng cáo?</li>
+                                </ul>
+                            </div>
+
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <!-- Thư viện nguồn tin -->
-                                <div class="space-y-2 max-h-[220px] overflow-y-auto pr-1">
+                                <div class="space-y-2 max-h-[180px] overflow-y-auto pr-1">
                                     <p class="text-[10px] uppercase font-bold text-gray-400">11 Nguồn tài liệu Hà đã chấm điểm</p>
                                     ${data.sources.map((item, idx) => `
                                         <button onclick="inspectSource(${idx})" class="w-full text-left p-2.5 bg-white hover:bg-pastelPink-50 border border-pink-100/30 rounded-xl transition-all text-xs flex justify-between items-center shadow-sm">
@@ -885,13 +913,13 @@
                             <p>${data.objective}</p>
                         </div>
 
-                        <!-- Subsection: Timeline (Nếu có) -->
+                        <!-- Subsection: Roadmap (Nếu có) -->
                         ${roadmapHTML}
 
                         <!-- Subsection: Result -->
                         <div class="space-y-1">
                             <h4 class="font-bold text-darkRose flex items-center gap-2 mb-1 uppercase tracking-wider text-[10px]">
-                                <i class="fa-solid fa-award text-pastelPink-500"></i> Bài học thu hoạch của mình
+                                <i class="fa-solid fa-award text-pastelPink-500"></i> Bài học thu hoạch
                             </h4>
                             <p>${data.result}</p>
                         </div>
@@ -1006,7 +1034,7 @@
             `;
         }
 
-        // --- TASK 3 PROMPT ARENA CODES (So sánh trực diện 3 tác vụ học tập) ---
+        // --- TASK 3 PROMPT CODES ---
         const promptArenaDatabase = {
             summary: {
                 title: "Tác vụ 1: Tóm tắt Thúy Kiều trong Truyện Kiều",
@@ -1027,7 +1055,7 @@
                 basicPrompt: `"Tạo câu hỏi tiếng Anh 12."`,
                 basicOutput: `[Mô phỏng phản hồi sơ khởi]:\n1. If I have money, I will buy it.\n2. She is a beautiful girl.\n3. He went to school yesterday.`,
                 advancedPrompt: `"Bạn là GV ôn thi THPT... tạo 3 câu hỏi (Nhận biết, Vận dụng, Nâng cao), sau mỗi câu cung cấp đáp án giải thích ngữ pháp cụ thể."`,
-                advancedOutput: `[Mô phỏng phản hồi của GV AI]:\n1. Nhận biết (Grammar): "If she ___ harder, she would pass."\n   - Đáp án: studied. Giải thích: ĐK loại 2 chỉ giả định trái thực tế ở hiện tại.\n2. Vận dụng (Vocabulary): "The project was put on hold due to ___ issues."\n   - Đáp án: A. financial / B. finance (Đáp án A - Tính từ bổ nghĩa cho danh từ "problems").`
+                advancedOutput: `[Mô phỏng phản hồi của GV AI]:\n1. Nhận biết (Grammar): "If she ___ harder, she would pass the exam."\n   - Đáp án: studied. Giải thích: ĐK loại 2 chỉ giả định trái thực tế ở hiện tại.\n2. Vận dụng (Vocabulary): "The project was put on hold due to ___ issues."\n   - Đáp án: A. financial / B. finance (Đáp án A - Tính từ bổ nghĩa cho danh từ "problems").`
             }
         };
 
@@ -1083,7 +1111,7 @@
             alert("Nhiệm vụ đã được Hà phê duyệt Done trên hệ thống!");
         }
 
-        // --- TASK 5 INTERACTIVE SLIDER (45% AI + 55% Human co-creation mockup) ---
+        // --- TASK 5 INTERACTIVE SLIDER ---
         function slideInteractiveDesign(val) {
             const frame = document.getElementById('co-creation-mockup-frame');
             const txt = document.getElementById('co-creation-mockup-text');
@@ -1195,7 +1223,7 @@
                 response = `[Mô phỏng AI phản hồi - Cấp độ Sơ khởi]:\nTruyện Kiều xoay quanh cuộc đời đầy gian truân của Thúy Kiều, một cô gái tài sắc vẹn toàn. Để cứu gia đình khỏi vòng tù tội oan ức, Kiều đành bán mình chuộc cha, hy sinh mối tình đầu đẹp đẽ với Kim Trọng. Nàng lưu lạc suốt 15 năm gian truân từ lầu xanh của Tú Bà đến phủ quan của Thúc Sinh, chịu sự ghen tuông ác độc của Hoạn Thư, trước khi được người anh hùng Từ Hải cứu thoát. Cuối cùng, nàng đoàn viên cùng gia đình cũ.\n\n⚠️ Nhận định: Phản hồi thuần kể lể cốt truyện tuyến tính, thiếu các lập luận chiều sâu văn học để học sinh ôn thi chuyên sâu.`;
             } else if (type === 'definition') {
                 query = `>> Lệnh nhập: "Giải thích trí tuệ nhân tạo (AI) bằng ngôn ngữ mộc mạc cho học sinh cấp 3."\n`;
-                response = `[Mô phỏng AI phản hồi - Cấp độ Cải tiến]:\nChào các bạn học sinh cấp 3 nha! Trí tuệ nhân tạo (AI) thực chất là việc dạy máy tính học từ kinh nghiệm như cách con người tụi mình lớn lên vậy đó. Thay vì chỉ chạy các dải lệnh tĩnh, AI phân tích hàng triệu dữ liệu để đưa ra đề xuất tối ưu.\nVí dụ:\n- Bộ lọc Video TikTok: Đề xuất đúng gu của bạn dựa trên thời gian bạn xem trước đó.\n- Mở khóa FaceID: AI phân tích cấu trúc 3D gương mặt bạn để xác minh bảo mật.\n\n✅ Nhận định: Từ ngữ mộc mạc, dễ hiểu, liên hệ ví dụ thực tế tốt cho đối tượng tiếp nhận học sinh cấp 3.`;
+                response = `[Mô phỏng AI phản hồi - Cấp độ Cải tiến]:\nChào các bạn học sinh cấp 3 nha! Trí tuệ nhân tạo (AI) thực chất là việc dạy máy tính học từ kinh nghiệm như cách con người tụi mình lớn lên vậy đó. Thay vì chỉ chạy các dải lệnh tĩnh, AI phân tích hàng triệu thói quen của mọi người để đưa ra các đề xuất thông minh hơn.\nVí dụ:\n- Bộ lọc Video TikTok: Đề xuất đúng gu của bạn dựa trên thời gian bạn xem trước đó.\n- Mở khóa FaceID: AI phân tích cấu trúc 3D gương mặt bạn để xác minh bảo mật.\n\n✅ Nhận định: Từ ngữ mộc mạc, dễ hiểu, liên hệ ví dụ thực tế tốt cho đối tượng tiếp nhận học sinh cấp 3.`;
             } else if (type === 'quiz') {
                 query = `>> Lệnh nhập: "Bạn là giáo viên hướng dẫn, hãy thiết kế 3 câu hỏi tiếng Anh ôn thi THPT tăng dần độ khó."\n`;
                 response = `[Mô phỏng AI phản hồi - Cấp độ Nâng cao]:\nChào các học trò yêu quý, sau đây là bài tập phân cấp năng lực để các em tự ôn luyện nhé:\n\n1. Nhận biết (Grammar): "If she ___ harder, she would pass."\n   A. studies / B. studied (Đáp án B - ĐK loại 2)\n2. Vận dụng (Vocabulary): "The project was put on hold due to ___ issues."\n   A. financial / B. finance (Đáp án A - Tính từ bổ nghĩa danh từ)\n3. Nâng cao (Reading): Phân tích ngữ cảnh suy luận ý đồ thực tế của tác giả trong đoạn văn...\n\n🔥 Nhận định: Thể hiện hoàn hảo vai trò giáo viên hướng dẫn, cấu trúc bài giảng giảng giải chặt chẽ.`;
